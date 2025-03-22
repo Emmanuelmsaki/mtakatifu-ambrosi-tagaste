@@ -1,0 +1,3235 @@
+.font-message-form{
+  font-size: 1rem;
+  font-weight: 600;
+}
+.download-darkgray-color{
+  color:#161415;
+}
+.pagination .page-link:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+.top-space {
+  padding-top: 175px;
+}
+.card1::before {
+  content: "\f654"; /* Unicode for the cross icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.07); /* Light background effect */
+  font-size: 9rem; /* Adjust size as needed */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.card-body1 {
+  position: relative;
+  z-index: 1; /* Ensures text stays above background icon */
+}
+
+.swiper {
+  padding-bottom: 10px;
+}
+.swiper-slide1 {
+  display: flex; /* Ensures all slides stretch evenly */
+  height: auto; /* Allow Swiper to manage height */
+}
+.swiper-pagination {
+  position: relative;
+  bottom: 0px !important;
+  margin-top: 30px;
+}
+.swiper-pagination-bullet {
+  background-color: #ccc !important;
+  opacity: 1;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+.swiper-pagination-bullet-active {
+  background-color: #d3b975 !important;
+  width: 16px;
+  border-radius: 14px;
+}
+.footer-whatsapp {
+  color: #25d366;
+  font-size: 1rem;
+}
+.designer {
+  text-transform: capitalize;
+  color: #d3b975;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.blog-blogu-link {
+  text-decoration: none;
+}
+
+.space-right {
+  margin-right: 7px;
+}
+.space-left {
+  margin-left: 7px;
+}
+.author {
+  font-style: italic;
+  color: #161415;
+  padding-left: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.makala-author1 {
+  font-style: italic;
+  color: white;
+  padding-left: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.author1 {
+  font-style: italic;
+  padding-left: 5px;
+  text-transform: uppercase;
+  color: white;
+}
+.somo-title {
+  color: #5e5d5d;
+  padding-right: 10px;
+}
+.download-color {
+  color: white;
+}
+.card-podikasiti-title {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px black;
+}
+.uongozi-container {
+  overflow: hidden;
+}
+.uongozi-img {
+  object-fit: cover;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 5px solid #d3b975;
+  padding: 5px;
+}
+.uongozi-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #161415;
+}
+.card-uongozi-title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+.card-uongozi-name {
+  color: #d3b975;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+.card-img-overlay-uongozi {
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay for text visibility */
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.card-uongozi-text {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.card-podikasiti-text {
+  font-size: 1rem;
+}
+.card-img-overlay-podikasiti {
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for text visibility */
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.icon-top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-badge {
+  text-transform: uppercase !important;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 5px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.date-section {
+  background-color: #1b1b1b;
+  color: #f7f7f7;
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  border-radius: 1.25rem;
+  font-weight: bold;
+}
+.date-section span {
+  display: block;
+}
+.date-day {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.date-month {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.blogu-space {
+  padding-bottom: 20px;
+}
+
+.card-matukio-cards {
+  border-radius: 1.25rem;
+  border: 0;
+  background-color: #161415;
+  color: #1f1f1a;
+  overflow: hidden;
+}
+
+.card-makala-cards-title i {
+  margin-right: 13px;
+}
+
+.mahubiri-page-row {
+  background-color: #161415;
+  padding-top: 150px;
+  padding-bottom: 60px;
+  padding-left:90px;
+  padding-right:90px;
+}
+
+.matangazo-page-row {
+  background-color: #161415;
+  padding-top: 150px;
+  padding-bottom: 60px;
+  padding-left: 90px;
+  padding-right: 90px;
+}
+.jisajili-page-row {
+  padding-top: 180px;
+  padding-bottom: 30px;
+}
+
+.jumuiya-page-row {
+  background-color: white;
+  padding-bottom: 40px;
+  color: #231f20;
+}
+
+.mahubiri-page-title {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: white;
+  padding-bottom: 30px;
+}
+
+.mahubiri-page-text {
+  font-family: inherit;
+  white-space: pre-line;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.67rem;
+}
+
+.jumuiya-page-title {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #231f20;
+  padding-bottom: 30px;
+  padding: 0 90px;
+}
+.ujumbe-page-title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #231f20;
+  padding-bottom: 30px;
+  padding: 0 200px;
+}
+.ujumbe-page-text {
+  border-left: 7px solid #231f20;
+  padding-left: 20px;
+  font-family: inherit;
+  white-space: pre-line;
+  color: #231f20;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.67rem;
+}
+.ujumbe-container {
+  padding: 0 200px;
+}
+.changia-form {
+  background-color: #161415;
+  padding: 20px 30px;
+  border-radius: 1.25rem;
+}
+.changia-card-text {
+  font-family: inherit;
+  white-space: pre-line;
+  padding: 0 30px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.67rem;
+}
+.changia-card-title {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.changia-icon-size {
+  font-size: 5rem;
+  color: white;
+}
+.ujumbe-form2 {
+  background-color: #161415;
+  padding: 20px 30px;
+  border-radius: 1.25rem;
+}
+.btn-form {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(75, 14, 154, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-radius: 1.25rem;
+  font-weight: 500;
+  color: white;
+  width: 100%;
+  border: none;
+}
+
+.btn-form:hover {
+  color: white;
+}
+.btn-form:focus,
+.btn-form:active {
+  color: white !important;
+  outline: none !important;
+}
+.btn-form1 {
+  color: #fdf0e6;
+  background-color: #25d366;
+  width: 100%;
+  border-radius: 1.25rem;
+}
+.btn-form1:hover,
+.btn-form:focus,
+.btn-form:active {
+  color: #fdf0e6 !important;
+  background-color: #14c455 !important;
+}
+.btn-form2 {
+  color: #fdf0e6;
+  background-color: #bf0a30;
+  width: 100%;
+  border-radius: 1.25rem;
+}
+.btn-form2:hover,
+.btn-form2:focus,
+.btn-form2:active {
+  color: #fdf0e6;
+  background-color: #ab1837;
+}
+.ujumbe-whatsapp {
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fdf0e6;
+}
+.whatsapp-ujumbe-link {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fdf0e6;
+}
+.ujumbe {
+  font-weight: 800;
+  color: #fdf0e6;
+  font-size: 2rem;
+}
+.required-star {
+  color: #bf0a30;
+}
+.jumuiya-page-text {
+  font-family: inherit;
+  white-space: pre-line;
+  padding: 0 90px;
+  color: #161415;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.67rem;
+}
+
+.jumuiya-page-date {
+  font-style: italic;
+  color: #161415;
+  text-transform: uppercase;
+  padding-left: 90px;
+  font-size: 1rem;
+  padding-bottom: 30px;
+}
+
+.mahubiri-page-container {
+  overflow: hidden;
+}
+
+.mahubiri-page-date {
+  font-style: italic;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding-bottom: 30px;
+}
+
+.podikasiti-page-date {
+  font-style: italic;
+  color: #161415;
+  text-transform: uppercase;
+  padding: 0 90px;
+  font-size: 1rem;
+  padding-bottom: 10px !important;
+}
+
+.card-mahubiri-cards-title {
+  color: #161415;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.card-mahubiri-cards {
+  border-right: 5px solid #bf0a30 !important;
+  border-left: 5px solid #bf0a30 !important;
+  border-radius: 1.25rem;
+  border: 0;
+  background-color: #fdf0e6;
+  color: #161415;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.card-mahubiri-cards:hover {
+  transform: translateY(-10px);
+  /* Moves the card upward */
+}
+.card-matangazo-cards {
+  border-right: 5px solid #bf0a30 !important;
+  border-left: 5px solid #bf0a30 !important;
+  border-radius: 1.25rem;
+  border: 0;
+  background-color: #fdf0e6;
+  color: #161415;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+.card-matangazo-cards:hover {
+  transform: translateY(-10px);
+  /* Moves the card upward */
+}
+.card-jumuiya-cards {
+  border-right: 5px solid #bf0a30 !important;
+  border-left: 5px solid #bf0a30 !important;
+  border-radius: 1.25rem;
+  border: 0;
+  background-color: #fdf0e6;
+  color: #161415;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+.card-jumuiya-cards:hover {
+  transform: translateY(-10px);
+  /* Moves the card upward */
+}
+
+.card-mahubiri-card1 {
+  border-radius: 1.25rem;
+  border: 0;
+  background-color: #161415;
+  color: #161415;
+  overflow: hidden;
+}
+
+.card-maktaba-cards {
+  border-right: 5px solid #bf0a30 !important;
+  border-left: 5px solid #bf0a30 !important;
+  border-radius: 1.25rem;
+  border: 0;
+  background-color: #fdf0e6;
+  color: #161415;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+.card-maktaba-cards:hover {
+  transform: translateY(-10px);
+  /* Moves the card upward */
+}
+.card-podikasiti-cards {
+  border-radius: 1.25rem;
+  border: 0;
+  background-color: #161415;
+  color: #231f20;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+}
+.podikasiti-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.25rem;
+  position: relative;
+  max-height: 80vh;
+}
+
+.podikasiti-overlay {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+.card-ratiba-cards {
+  border-radius: 1.25rem;
+  border: 0;
+  border-left: 5px solid #bf0a30;
+  background-color: #fdf0e6;
+  color: #231f20;
+  overflow: hidden;
+}
+.card-jisajili-cards {
+  border-radius: 1.25rem;
+  border: 0;
+  background-color: #ffffff;
+  color: black;
+  overflow: hidden;
+}
+.form-control1 {
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0rem;
+}
+.card-cards-img-top1 {
+  border-radius: 1.25rem;
+  border: 0;
+  background-color: #fdf0e6;
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
+}
+.card-matukio-cards-img-top {
+  border-radius: 1.25rem;
+  border: 0;
+  background-color: #161415;
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
+}
+
+.card-mahubiri-img-top {
+  border: 0;
+  background-color: #161415;
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
+}
+
+.card-matangazo {
+  border-radius: 1.25rem;
+  border: 0;
+  background-color: white;
+  color: #1f1f1a;
+  overflow: hidden;
+}
+
+.card-makala-cards-title {
+  font-style: italic;
+  color: #5e5d5d;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.card-makala-cards-title1 {
+  font-style: normal;
+  color: #aba7a5;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.card-makala-cards-title1 i {
+  margin-right: 13px;
+}
+.card-maktaba-cards-title {
+  font-style: normal;
+  color: #5e5d5d;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.card-maktaba-cards-title i {
+  margin-right: 13px;
+}
+.card-ratiba-text {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.card-makala-cards-link {
+  text-decoration: none;
+}
+
+.card-makala-cards {
+  border-radius: 1.25rem;
+  border: 0;
+  background-color: #161415;
+  color: #1f1f1a;
+  overflow: hidden;
+}
+
+.border-md-right {
+  border-right: 1px solid #aba7a5;
+  /* Add a 2px black vertical border */
+}
+
+.page-blog-author {
+  color: #aba7a5;
+  text-transform: uppercase;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.1rem;
+  font-size: 0.9rem;
+}
+
+.blog-page-share {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+.blog-page-share2 {
+  line-height: 4rem;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+
+.blog-page-share i {
+  font-size: 30px;
+  color: white;
+}
+
+.blog-page-share1 {
+  line-height: 1.67rem;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.blog-page-text {
+  font-family: inherit;
+  white-space: pre-line;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.67rem;
+}
+
+.blog-page-row {
+  padding-bottom: 30px;
+  color: white;
+  padding-top: 50px;
+}
+
+.blog-page-date {
+  font-style: italic;
+  color: white;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+  font-size: 1rem;
+}
+
+.blog-page-title {
+  color: white;
+  padding-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.blog-page-carousel .carousel-blog {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.blog-page-carousel .carousel-blog img {
+  border-radius: 1.25rem;
+}
+
+.blog-page-container {
+  background-color: #161415;
+  padding: 0 90px;
+  padding-top: 150px;
+  overflow: hidden;
+}
+
+.blogu-page-row1 {
+  background-color: #231f20;
+  padding-top: 150px;
+  height: 100vh;
+  /* If you want full viewport height */
+}
+
+.blogcarousel .carousel-blog {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.podikasiti-shadow {
+  text-shadow: 2px 2px 4px black;
+}
+.blog-text {
+  font-size: 1rem;
+  color: #d3b975;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px black;
+}
+
+.blog-title {
+  font-size: 1.3rem;
+  padding-bottom: 40px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px black;
+}
+
+.row-blog {
+  padding: 30px 10px;
+  padding-bottom: 60px !important;
+}
+.row-jumuiya {
+  padding: 30px 10px;
+  padding-bottom: 60px !important;
+}
+.row-maktaba {
+  padding: 30px 10px;
+  padding-bottom: 60px !important;
+}
+.row-mahubiri {
+  padding: 30px 10px;
+  padding-bottom: 60px !important;
+}
+.row-podikasiti {
+  padding: 30px 10px;
+  padding-bottom: 60px !important;
+}
+
+/*start of the navbar*/
+.oval-image {
+  width: 50px;
+  height: 60px;
+  border-radius: 50%;
+  /* Makes it oval when width and height are not equal */
+  object-fit: cover;
+  /* Ensures the image covers the container while maintaining aspect ratio */
+  padding: 2px;
+  /* Space between image and border */
+  border: 1.5px solid #231f20;
+}
+
+.gospel-header {
+  letter-spacing: 0rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-family: Realist Wide, sans-serif;
+  margin-right: 5px;
+  text-shadow: 2px 2px 4px black;
+  color: white;
+}
+
+.current-date {
+  letter-spacing: 0rem;
+  text-transform: uppercase;
+  margin-right: 5px;
+  font-size: 15px;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  text-shadow: 2px 2px 4px black;
+}
+
+.somo {
+  letter-spacing: 0rem;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: Realist Wide, sans-serif;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+.separator1 {
+  margin: 0 5px;
+  color: white;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.7);
+  /*darkens the carousel img*/
+  object-fit: cover;
+  /*ensure the image covers entire area*/
+}
+
+.carousel-item {
+  letter-spacing: 0.2rem;
+  height: 35rem;
+  color: white;
+  position: relative;
+}
+
+.contena1 {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.img-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+}
+
+.navbar {
+  position: absolute;
+  padding: 5px 5px;
+  top: 0;  
+  z-index: 1030;
+}
+.navbar1 {
+  background-color: #231f20 !important;
+  color: white !important;
+  margin: 10px !important;
+  padding: 0.1rem !important;
+  border-radius: 16px !important;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.navbar .nav-item .nav-link.active {
+  color: white;
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.navbar-brand,
+.offcanvas-title {
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  color: #d3b975;
+  text-shadow: 2px 2px 4px black;
+}
+
+.nav-item {
+  line-height: 35px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  letter-spacing: 0rem;
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px black;
+}
+
+.nav-item .nav-link:focus {
+  color: white;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.navbar .nav-item .nav-link.active {
+  color: #d3b975;
+}
+
+@media (min-width: 991px) {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #d3b975;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    width: 85%;
+    visibility: visible;
+  }
+}
+
+.offcanvas-fullscreen {
+  width: 100vw !important;
+  /* Full viewport width */
+  height: 100vh !important;
+  /* Full viewport height */
+  z-index: 1055;
+  /* Above other elements */
+}
+
+.offcanvas {
+  background-color: rgba(35, 31, 32, 0.9);
+  /* Background color with opacity */
+  z-index: 1055;
+  color: white;
+}
+
+.offcanvas-body {
+  padding: 20px;
+  margin: 10px;
+}
+
+.offcanvas-header .btn-close {
+  font-size: 1.2rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.carousel-indicators {
+  padding-bottom: 20px;
+}
+
+/* start of dropdown menu in navbar*/
+
+.dropdown-menu {
+  background-color: rgba(35, 31, 32, 0.8);
+  /* Background color with opacity */
+  border: 0;
+  padding: 10px 10px;
+  color: white;
+  position: absolute;
+}
+
+.dropdown-item {
+  color: white;
+  letter-spacing: 0rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px black;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: rgba(35, 31, 32, 0);
+  /* Background color with opacity */
+  color: #d3b975;
+}
+
+/* Move the link slightly right on hover */
+.hover-move {
+  transition: transform 0.3s ease;
+  /* Smooth transition */
+}
+
+.hover-move:hover {
+  transform: translateX(5px);
+  /* Moves 5px to the right */
+}
+
+/*end of dropdown menu in navbar*/
+
+/*End of the navbar*/
+
+/*start of card container*/
+.misabody {
+  background-color: #231f20;
+  overflow: hidden;
+  position: relative;
+}
+
+.misarow1 {
+  color: white;
+  padding-top: 60px;
+}
+
+.misarow1-2 {
+  line-height: 1.65rem;
+  color: #d3b975;
+  padding-left: 30px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: Realist Wide, sans-serif;
+  letter-spacing: 0.175em;
+}
+
+.misarow {
+  color: white;
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+}
+
+.card-container {
+  scroll-behavior: smooth;
+  display: flex;
+  overflow-x: auto;
+}
+
+.card-container::-webkit-scrollbar {
+  width: 0px;
+  /*make the scrollbar to disappper*/
+}
+
+.card-container .card {
+  flex: 0 0 auto;
+  /* Define the card size within the flex container */
+}
+
+.card3 img {
+  filter: brightness(0.7);
+  object-fit: cover;
+  height: 30rem;
+  border-radius: 1.25rem;
+  position: relative;
+  max-height: 65vh;
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+.card3:hover img {
+  transform: scale(1);
+}
+
+.card3 {
+  border-radius: 1.25rem;
+  color: white;
+  background-color: #231f20;
+  position: relative;
+  border: 0px;
+  overflow: hidden;
+  /* Ensures the image stays within the card boundaries */
+  flex-shrink: 0;
+  /* Prevent cards from shrinking */
+}
+
+.card3-link {
+  color: white;
+  text-decoration: none;
+}
+
+.card-img-overlay1 {
+  padding-top: 30px;
+  padding-left: 30px;
+  text-align: left;
+  justify-content: space-between;
+  /* Distributes content between top and bottom */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.card-img-overlay1 .card-link5 {
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px black;
+  text-decoration: none;
+  color: #d3b975;
+  margin-top: auto;
+  /* This pushes the link to the bottom */
+  font-family: Realist Wide, sans-serif;
+  letter-spacing: 0.2rem;
+  padding-bottom: 15px;
+  font-size: 0.9rem;
+  text-align: start;
+}
+
+.card-img-overlay1 .card-title {
+  font-family: Realist, sans-serif;
+  text-shadow: 2px 2px 4px black;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
+}
+
+.card-img-overlay1 .card-text {
+  text-transform: uppercase;
+  font-family: Realist, sans-serif;
+  font-size: 1.3rem;
+  text-shadow: 2px 2px 4px black;
+  font-weight: 600;
+}
+
+.card-link1 {
+  color: white;
+  text-decoration: none;
+}
+
+.card-title-icon i {
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+/*END of the card container*/
+
+/* Start of makala row*/
+.misarow2 {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.card-makala-container {
+  color: white;
+  padding-top: 17px !important;
+  padding-bottom: 40px !important;
+  text-align: center;
+  padding: 0 3px;
+}
+
+.card-makala {
+  border-radius: 1.25rem;
+  color: white;
+  background-color: #231f20;
+  position: relative;
+  border: 0px;
+  overflow: hidden;
+  /* Ensures the image stays within the card boundaries */
+  padding: 0;
+  margin: 0;
+}
+
+.card-makala img {
+  filter: brightness(0.4);
+  object-fit: cover;
+  height: 30rem;
+  position: relative;
+  max-height: 80vh;
+  transform: scale(1.5);
+  /* Image starts slightly zoomed in */
+  transition: transform 0.5s ease;
+  /* Added transition for smooth effect */
+}
+
+.card-makala:hover img {
+  transform: scale(1.4);
+  /* Image zooms out to normal size on hover */
+}
+
+.card-makala-img-overlay {
+  position: absolute;
+  padding-top: 10px;
+  padding-left: 10px;
+  text-align: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* Make the overlay width responsive */
+}
+
+.card-makala-link {
+  letter-spacing: 0.1rem;
+  white-space: nowrap;
+  text-decoration: none;
+  background-color: #d3b975;
+  color: #161415;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  padding: 12px 24px;
+  border-radius: 100px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.card-makala-link:hover {
+  background-color: white;
+  transform: translateY(-2px);
+  color: black;
+}
+
+.card-makala-link i {
+  margin-left: 5px;
+}
+.live-streaming-link {
+  letter-spacing: 3px;
+  white-space: nowrap;
+  text-decoration: none;
+  background-color: white;
+  color: #bf0a30;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 12px 24px;
+  border-radius: 100px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.live-streaming-link:hover {
+  background-color: #d3b975;
+  transform: translateY(-2px);
+  color: #bf0a30;
+}
+
+.live-streaming-link i {
+  margin-left: 5px;
+}
+.custom-spinner {
+  animation-duration: 1.5s; /* Slower spinner (default is 0.75s) */
+  width: 14px; /* Custom width */
+  height: 14px; /* Custom height */
+}
+.card-makala-link1 {
+  margin-bottom: 60px;
+  justify-content: center;
+}
+
+.card-makala-title {
+  font-family: Realist, sans-serif;
+  text-shadow: 2px 2px 4px black;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #d3b975;
+  letter-spacing: 0.1rem;
+  padding-top: 30px;
+}
+
+.card-makala-text {
+  border-left: 7px solid #d3b975;
+  line-height: 1.5rem;
+  font-family: "Baskerville", serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  padding: 0 20px;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px black;
+}
+
+.makala-author {
+  text-transform: capitalize;
+  color: #fdf0e6;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 5rem;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+.card1 {
+  border-radius: 1.25rem;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+  font-family: Realist, sans-serif;
+  color: #1f1f1a;
+}
+
+.card-top-border {
+  border-top: 8px solid gold;
+}
+
+.card-linko {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  /* Align text and icon vertically */
+  color: #1f1f1a;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 20px 8px;
+}
+
+.card-linko:hover {
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+.card-linko i {
+  font-size: 1rem;
+  padding-right: 20px;
+}
+
+.card-body .card-title {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.card-body1 .card-text {
+  color: #5e5d5d;
+}
+
+.card-linko .card-icon {
+  margin-left: auto;
+  /*icon imove right*/
+  padding-right: 8px;
+  padding-left: 3px;
+}
+
+/*End of makala row*/
+
+/* start of blogu container*/
+.blogu-container {
+  padding-top: 30px;
+  background-color: #161415;
+  overflow: hidden;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+.blogu-index-container {
+  background-color: #161415;
+  overflow: hidden;
+  padding-left: 3px;
+  padding-right: 3px;
+  position: relative;
+}
+.blogu-index-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Adjust height as needed */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 50%, #231f20 100%);
+}
+.makala-container1 {
+  padding-top: 30px;
+  background-color: #161415;
+  overflow: hidden;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+.blogu-container2 {
+  background-color: white;
+  overflow: hidden;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.matukio-container {
+  padding-top: 30px;
+  background-color: #161415;
+  overflow: hidden;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.mahubiri-container {
+  padding-top: 30px;
+  background-color: #161415;
+  overflow: hidden;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.podikasiti-container2 {
+  background-color: #161415;
+  overflow: hidden;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.matangazo-container {
+  padding-top: 0px;
+  background-color: #161415;
+  overflow: hidden;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.vyama-container {
+  padding-top: 20px;
+  background-color: #161415;
+  overflow: hidden;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.maktaba-container {
+  padding-top: 20px;
+  background-color: #161415;
+  overflow: hidden;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.ratiba-container {
+  padding-top: 20px;
+  background-color: #161415;
+  overflow: hidden;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.jisajili-container {
+  position: relative;
+  padding-top: 20px;
+  overflow: hidden;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 50px;
+}
+.jisajili-overlay img {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.5);
+  z-index: -1;
+}
+
+.jisajili-row {
+  padding-top: 10px;
+  justify-content: center;
+  background-color: #fdf0e6;
+}
+.jisajili-link {
+  color: #5e5d5d;
+  text-decoration: none;
+}
+.jisajili-link1 {
+  margin-left: 5px;
+  color: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(75, 14, 154, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  text-decoration: none;
+}
+.rejesha-akaunti-ujumbe {
+  color: #161415;
+  font-size: 1.4rem;
+}
+.form-head-icons {
+  padding-left: 7px;
+}
+.jisajili-form {
+  font-weight: 500;
+}
+.blogu-row {
+  padding-top: 30px;
+  justify-content: center;
+  background-color: #161415;
+}
+
+.blogu-header {
+  text-transform: uppercase;
+  color: #1f1f1a;
+  font-size: 17px;
+  font-weight: 600;
+  color: #d1ad53;
+  line-height: 35px;
+  padding-left: 30px;
+  font-family: Realist Wide, sans-serif;
+}
+
+.blogu-text {
+  color: white;
+  padding-left: 3px;
+  padding-right: 3px;
+  font-size: 27px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.67rem;
+}
+
+.red-line {
+  width: 70px;
+  height: 5px;
+  background-color: #caa139;
+  border-radius: 10px;
+  margin: 7px auto;
+  transform: translateX(17px);
+  /* Moves 10px to the right; use negative for left */
+  margin-top: 20px;
+}
+
+/* White Triangle */
+.red-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  /* Position at the middle of the red line */
+  left: 50%;
+  /* Center horizontally */
+  transform: translate(-50%, -50%);
+  /* Offset to center both vertically and horizontally */
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  /* Triangle left edge */
+  border-right: 8px solid transparent;
+  /* Triangle right edge */
+  border-bottom: 8px solid #161415;
+  /* Triangle pointing bottom, white color */
+}
+
+.navigation {
+  display: flex;
+  gap: 7px;
+  justify-content: left;
+  align-items: center;
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
+
+.nav-button {
+  border-radius: 0.4rem;
+  width: 36px;
+  height: 36px;
+  background-color: #bf0a30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  transform: rotate(45deg);
+  /* Create diamond shape */
+}
+
+.nav-button:hover {
+  background-color: #bf0a30;
+}
+
+.nav-button i {
+  transform: rotate(-45deg);
+}
+
+.nav-button i {
+  transform: rotate(-45deg);
+}
+
+.row-card {
+  background-color: #161415;
+  padding: 0 10px;
+  padding-top: 25px;
+  padding-bottom: 0px !important;
+}
+
+.card-cards {
+  height: 100%;
+  border-radius: 1.25rem;
+  border: 0;
+  border-bottom: 5px solid #bf0a30;
+  background-color: #161415;
+  color: #1f1f1a;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.card-cards:hover {
+  transform: translateY(-10px);
+  /* Moves the card upward */
+}
+.card-index-blogu-cards {
+  width: 100%; /* Ensure cards take full width */
+  max-width: 600px; /* Adjust as needed */
+  min-width: 200px; /* Prevent shrinking too much */
+  height: 100%;
+  border-radius: 1.25rem;
+  border: 0;
+  border-bottom: 5px solid #f70439;
+  background-color: #161415;
+  color: #1f1f1a;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.card-index-blogu-cards:hover {
+  transform: translateY(-10px);
+  /* Moves the card upward */
+}
+
+.card-blogu-title {
+  font-style: italic;
+  color: #5e5d5d;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.card-blogu-title i {
+  font-size: 0.8rem;
+  padding-right: 13px;
+}
+
+.card-cards-text {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #161415;
+  text-transform: uppercase;
+}
+.card-makala-cards-text1 {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: white;
+  text-transform: uppercase;
+}
+.card-matukio-cards-text {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: white;
+  text-transform: uppercase;
+}
+
+.card-ratiba-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: #1f1f1a;
+  text-transform: uppercase;
+}
+.card-cards-img-top {
+  display: block;
+  border: 0;
+  background-color: #161415;
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
+}
+.card-blogu-cards-img-top {
+  display: block;
+  border: 0;
+  background-color: #161415;
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
+}
+.card-makala-cards-img-top {
+  border-radius: 1.25rem;
+  display: block;
+  border: 0;
+  background-color: #161415;
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
+  filter:brightness(1);
+}
+
+.blogu-link {
+  letter-spacing: 0.1rem;
+  line-height: 3rem;
+  color: #bf0a30;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: auto;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.blogu-link:hover {
+  color: red;
+}
+
+.card-blogu-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30px 30px;
+}
+.card-makala-body {
+  background-color: #161415;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30px 30px;
+}
+.blogu-body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30px 30px;
+  padding-bottom: 10px !important;
+}
+
+.card-mahubiri-body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30px 30px;
+}
+
+.card-ratiba-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30px 30px;
+  line-height: 2rem;
+}
+
+.ratiba-space {
+  padding-bottom: 20px;
+}
+
+.button-link1 {
+  justify-content: center;
+}
+
+.blogu-button {
+  letter-spacing: 0.1rem;
+  font-size: 0.9rem;
+  background-color: #bf0a30;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.blogu-button:hover {
+  background-color: rgb(152, 5, 5);
+  transform: translateY(-2px);
+}
+
+.blogu-row2 {
+  color: red;
+  background-color: #161415;
+  padding-bottom: 40px;
+}
+
+/*end of blogu container*/
+
+/* start of footer area*/
+.contena2 {
+  padding: 40px 65px;
+  padding-bottom: 10px !important;
+  background-color: #231f20;
+  overflow: hidden;
+  position: relative;
+}
+
+.contena2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Adjust height as needed */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, #161415 100%);
+}
+
+.logo-row {
+  color: white;
+  padding: 30px;
+}
+
+.centa-logo {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  color: #d3b975;
+  text-shadow: 2px 2px 4px black;
+}
+
+.footer-icons i {
+  text-align: center;
+  color: white;
+  font-size: 23px;
+  /* Set icon size to large */
+}
+
+.footer-terms {
+  padding-top: 20px;
+}
+
+.footer-icons,
+.footer1,
+.footer-links {
+  font-size: 0.9rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+}
+
+.footer-icons1 {
+  margin: 0 12px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+.separator {
+  margin: 0 10px;
+  color: white;
+}
+
+.footer2 {
+  word-break: break-all;
+  /* Breaks words when necessary to prevent overflow */
+  text-decoration: none;
+  line-height: 40px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+}
+
+.footer-heads {
+  color: #d3b975;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  margin-top: 40px;
+}
+
+.footer3 {
+  line-height: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.horizontal-line-resettext {
+  width: 100%;
+  height: 2px;
+  background-color: #aba7a5;
+}
+.horizontal-line {
+  width: 95%;
+  height: 2px;
+  background-color: #aba7a5;
+}
+.horizontal-line1 {
+  width: 100%;
+  height: 2px;
+  background-color: #aba7a5;
+}
+.horizontal-line-blog-page {
+  width: 100%;
+  height: 2px;
+  background-color: #aba7a5;
+}
+.footer-hover {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  /* Inherit color to match the theme */
+}
+
+.footer-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1.5px;
+  background-color: #d3b975;
+  transition: width 0.3s ease-in-out;
+}
+
+.footer-hover:hover::after {
+  width: 100%;
+}
+
+/*icon hover */
+.icon-hover {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon-hover:hover {
+  transform: scale(1.3);
+  /* Zoom in */
+}
+
+.footer2-1 {
+  margin-right: 10px;
+  font-size: 0.9rem;
+}
+
+.sera-container {
+  padding-top: 120px;
+  background-color: white;
+  color: white;
+  overflow: hidden;
+}
+
+.sera-title {
+  padding-top: 40px;
+  background-color: white;
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  padding-bottom: 15px;
+  color: #231f20;
+}
+
+.sera-text {
+  font-family: inherit;
+  white-space: pre-line;
+  letter-spacing: 0.01em;
+  font-family: Realist, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.sera-row {
+  padding: 0 90px;
+  background-color: white;
+  color: #231f20;
+  padding-bottom: 50px;
+}
+
+.matukio-page-container {
+  background-color: white;
+  color: #231f20;
+  overflow: hidden;
+}
+
+.podikasiti-page-container {
+  background-color: white;
+  color: #231f20;
+  overflow: hidden;
+}
+
+.podikasiti-page-row {
+  background-color: white;
+  color: #231f20;
+  padding-bottom: 60px;
+}
+.uongozi-page-row {
+  padding: 0 0px;
+  background-color: #f4f4f4;
+  color: #231f20;
+  padding-bottom: 20px;
+}
+
+.maktaba-page-row2 {
+  padding: 0 0px;
+  background-color: white;
+  color: #231f20;
+  padding-bottom: 50px;
+}
+.maktaba-page-row {
+  padding: 0 10px;
+  background-color: white;
+  color: #231f20;
+  padding-bottom: 40px;
+}
+
+.podikasiti-page-carousel {
+  padding-top: 8px;
+  filter: brightness(1);
+}
+
+.podikasiti-page-carousel .carousel-blog {
+  width: 100%;
+  height: 110px;
+  background-color: white;
+  border-radius: 1.25rem;
+}
+
+.podikasiti-page-title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 10px 90px;
+}
+
+.matukio-page-carousel {
+  padding-top: 8px;
+  filter: brightness(0.7);
+}
+
+.matukio-page-title {
+  text-transform: uppercase;
+  padding-top: 30px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 20px 0;
+}
+
+.matukio-page-items {
+  letter-spacing: 0.01em;
+  font-family: inherit;
+  line-height: 2.5rem;
+  font-size: 1rem;
+  color: #231f20;
+  text-transform: capitalize !important;
+  font-weight: 400;
+}
+
+.matukio-page-icons i {
+  padding-right: 20px;
+}
+.matukio-page-icons {
+  text-transform: capitalize !important;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* End of footer area*/
+.matukio-page-row {
+  background-color: white;
+  color: #231f20;
+  padding-bottom: 60px;
+}
+.matukio-page-row1 {
+  padding: 0 50px;
+  background-color: white;
+  color: #231f20;
+}
+.podikasiti-page-row1 {
+  padding: 0 90px;
+  background-color: white;
+  color: #161415;
+}
+.podikasiti-container {
+  padding-top: 0px;
+  background-color: #161415;
+  color: white;
+  overflow: hidden;
+}
+
+.podikasiti-row {
+  background-color: #161415;
+  color: #231f20;
+  padding-bottom: 0px !important;
+}
+
+.podikasiti-carousel {
+  padding-top: 8px;
+  filter: brightness(1);
+  height: 420px;
+}
+
+.podikasiti-page-carousel2 {
+  padding-left: 90px;
+  padding-right: 90px;
+  padding-top: 8px;
+  filter: brightness(1);
+  height: 420px;
+}
+
+.podikasiti-carousel .carousel-inner {
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.carousel-video {
+  position: relative;
+  border-radius: 1.25rem;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
+}
+
+.carousel-video2 {
+  position: relative;
+  border-radius: 1.25rem;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
+}
+
+.matukio-page-text {
+  border-left: 7px solid #e66a5a;
+  padding-left: 20px;
+  white-space: pre-line;
+  letter-spacing: 0.01em;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.67rem;
+  color: #231f20;
+}
+.podikasiti-page-text {
+  border-left: 7px solid #161415;
+  padding-left: 20px;
+  white-space: pre-line;
+  letter-spacing: 0.01em;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.67rem;
+  color: #161415;
+}
+
+.maktaba-page-carousel img {
+  height: 400px;
+}
+
+.maktaba-page-carousel {
+  height: 430px;
+}
+
+.live-stream-container {
+  background-color: #161415;
+  color: white;
+  overflow: hidden;
+}
+
+.live-stream-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  line-height: 1.7rem;
+  color: #d3b975;
+  font-size: 1.5rem;
+}
+
+.live-stream-text {
+  border-left: 7px solid #d3b975;
+  padding-left: 20px;
+  font-size: 1.1rem;
+  line-height: 2rem;
+}
+
+.live-stream-text2 {
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: 2.1rem;
+}
+
+.live-stream-text3 {
+  font-weight: 500;
+  color: #d3b975;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+.live-stream-row {
+  padding: 30px 90px;
+}
+
+.sakramenti-container {
+  background-color: #161415;
+  padding: 50px 90px;
+  overflow: hidden;
+}
+
+.sakramenti-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  color: white;
+  text-align: center;
+}
+
+.sakramenti-text {
+  border-left: 7px solid #e66a5a;
+  padding-left: 20px;
+  font-family: inherit;
+  white-space: pre-line;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.67rem;
+}
+
+.sakramenti-title2 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  color: white;
+  padding-left: 25px;
+}
+
+.sakramenti-nakala {
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  line-height: 2.2rem;
+}
+
+.sakramenti-nakala a {
+  color: #e66a5a;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.sakramenti-nakala a:hover {
+  color: #fa9183;
+}
+
+.sakramenti-nakala i {
+  margin-left: 15px;
+  font-weight: 700;
+}
+
+.matangazo-nakala {
+  display: flex;
+  flex-direction: column;
+  line-height: 2.2rem;
+}
+
+.matangazo-nakala a {
+  color: #e66a5a;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.matangazo-nakala a:hover {
+  color: #fa9183;
+}
+
+.matangazo-nakala i {
+  margin-left: 15px;
+  font-weight: 700;
+}
+
+.jumuiya-nakala {
+  display: flex;
+  flex-direction: column;
+  line-height: 2.2rem;
+}
+
+.jumuiya-nakala a {
+  color: #bf0a30;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.jumuiya-nakala a:hover {
+  color: rgb(152, 5, 5);
+}
+
+.jumuiya-nakala i {
+  margin-left: 15px;
+  font-weight: 700;
+}
+
+.changia-container {
+  padding: 0 200px;
+  overflow: hidden;
+}
+.changia-title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #231f20;
+  padding-bottom: 30px;
+  padding: 0 200px;
+}
+.changia-text {
+  border-left: 7px solid #231f20;
+  padding-left: 20px;
+  font-family: inherit;
+  white-space: pre-line;
+  color: #231f20;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.67rem;
+}
+.changia-row {
+  background-color: white;
+  padding-top: 0px;
+  padding-bottom: 60px;
+  color: #231f20;
+}
+.makala-page-header {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.blog-page-header {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.form-head {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+.form-head1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+.form-head2 {
+  color: #5e5d5d;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.form-head-rejesha {
+  color: #5e5d5d;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.form-control:focus {
+  outline: none;
+  border-color: 1px solid black;
+  box-shadow: none;
+}
+.ratiba-time {
+  color: #bf0a30;
+  font-weight: 700 !important;
+}
+.ratiba-time1 {
+  color: #e64a35;
+  font-weight: 700 !important;
+}
+/* Responsive behavior */
+.blogu-page-col-right-space {
+  padding-right: 48px;
+}
+@media (max-width: 767.5px) {
+  .font-message-form{
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+  .jumuiya-page-row{
+    padding-bottom: 20px;
+  }
+  .jumuiya-nakala {
+    line-height: 1.7rem;
+  }
+  .jumuiya-nakala a {
+    font-size: 0.8rem;
+  }
+  .matangazo-nakala {
+    line-height: 1.7rem;
+  }
+  .sakramenti-nakala {
+    line-height: 1.7rem;
+  }
+  .sakramenti-nakala a {
+    font-size: 0.8rem;
+  }
+  .matangazo-nakala a {
+    font-size: 0.8rem;
+  }
+  .sera-title {
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+  .top-space {
+    padding-top: 155px;
+  }
+  .horizontal-line-blog-page {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 90%;
+  }
+  .matukio-page-row {
+    padding-bottom: 5px !important;
+  }
+  .rejesha-akaunti-ujumbe {
+    font-size: 1.1rem;
+  }
+  .uongozi-title {
+    font-size: 1.3rem;
+  }
+  .blogu-page-col-right-space {
+    padding-right: 10px;
+  }
+  .changia-card-title {
+    font-size: 0.9rem;
+  }
+  .changia-icon-size {
+    font-size: 3rem;
+  }
+  .ujumbe {
+    font-size: 1.5rem;
+  }
+  .form-head-rejesha {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .blog-page-share i {
+    font-size: 27px;
+    color: white;
+  }
+
+  .page-blog-author {
+    padding-top: 30px;
+    padding-bottom: 25px;
+    font-size: 0.8rem;
+  }
+  .podikasiti-page-row1 {
+    padding: 0 20px;
+  }
+  .form-head2 {
+    font-size: 0.8rem;
+  }
+  .form-head1 {
+    font-size: 1.1rem;
+  }
+  .form-head {
+    font-size: 1.5rem;
+  }
+  .blog-page-header {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .makala-page-header {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .changia-container {
+    padding: 0 20px;
+  }
+  .jisajili-container {
+    padding-top: 10px;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .jisajili-row {
+    padding-top: 10px;
+    justify-content: center;
+  }
+  .matukio-container {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  .mahubiri-container {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  .makala-container1 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  .blogu-container {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  .ujumbe-page-title {
+    font-size: 1.4rem;
+    padding: 0 30px;
+  }
+  .ujumbe-page-text {
+    padding: 0 20px;
+  }
+  .changia-title {
+    font-size: 1.4rem;
+    padding: 0 30px;
+  }
+  .changia-text {
+    padding: 0 20px;
+  }
+
+  .ujumbe-container {
+    padding: 0 20px;
+  }
+
+  .sakramenti-title {
+    font-size: 1.4rem;
+  }
+
+  .sakramenti-title2 {
+    font-size: 1.2rem;
+  }
+
+  .sakramenti-container {
+    padding: 20px;
+    overflow: hidden;
+  }
+  .live-stream-title {
+    font-size: 1.2rem;
+  }
+  .live-stream-text2 {
+    font-size: 0.9rem;
+  }
+
+  .live-stream-row {
+    padding: 0 10px;
+    padding-bottom: 0px !important;
+  }
+
+  .jumuiya-page-date {
+    font-size: 0.8rem;
+    padding-left: 10px;
+    padding-bottom: 20px;
+  }
+
+  .jumuiya-page-title {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .jumuiya-page-text {
+    padding: 0 10px;
+  }
+  .changia-card-text {
+    padding: 0 10px;
+  }
+  .podikasiti-page-carousel3 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .podikasiti-page-carousel2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .podikasiti-page-date {
+    padding: 0 10px;
+    font-size: 0.8rem;
+  }
+
+  .podikasiti-page-title {
+    font-size: 1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .sera-row {
+    padding: 0 10px;
+    padding-bottom: 50px;
+  }
+
+  .matukio-page-row {
+    padding: 0 0px;
+    padding-bottom: 50px;
+  }
+  .matukio-page-row1 {
+    padding: 0 20px;
+    padding-bottom: 50px;
+  }
+
+  .matukio-page-title {
+    font-size: 1.1rem;
+    padding: 0 20px;
+  }
+
+  .matukio-page-items {
+    padding: 0 20px;
+  }
+
+  .matukio-page-text {
+    padding: 0 20px;
+  }
+
+  .blog-page-row {
+    padding:20px 15px !important;
+  }
+
+  .border-md-right {
+    border-right: none;
+    /* Remove border on smaller screens */
+  }
+
+  .blog-page-share2,
+  .blog-page-share {
+    line-height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .blog-page-share1 {
+    padding-top: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 18px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .blog-page-date {
+    padding-bottom: 15px;
+    font-size: 0.8rem;
+    padding-left:10px;
+  }
+
+  .blog-page-title {
+    color: white;
+    padding-bottom: 15px;
+    padding-left:10px;
+    padding-right:10px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .blog-page-container {
+    padding: 0 10px;
+    padding-top: 130px;
+    overflow: hidden;
+  }
+
+  .blog-page-carousel .carousel-blog {
+    width: 100%;
+    height: 200px;
+    /* Set the height of the carousel */
+    object-fit: cover;
+    /* Keeps the aspect ratio while filling the space */
+  }
+
+  .footer-terms {
+    display: flex;
+    flex-direction: column;
+    /* Stack the items vertically on small devices */
+    align-items: center;
+  }
+
+  .footer-icons i {
+    margin-bottom: 25px;
+  }
+
+  .footer-links {
+    margin-top: 10px;
+  }
+
+  .contena2 {
+    padding: 30px 0;
+    overflow: hidden;
+  }
+
+  .navbar {
+    padding: 5px 5px;
+  }
+
+  .misarow1-2 {
+    color: #d3b975;
+    padding-left: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-family: Realist Wide, sans-serif;
+    letter-spacing: 0.175em;
+  }
+
+  .card-makala-title {
+    font-size: 1rem;
+    padding-top: 20px;
+  }
+  .card-cards-text {
+    font-size: 0.8rem;
+  }
+
+  .card-matukio-cards-text {
+    font-size: 0.8rem;
+  }
+
+  .card-makala-text {
+    letter-spacing: 0.1rem;
+    line-height: 1.3rem;
+    font-size: 1.1rem;
+    padding: 0 3px;
+  }
+
+  .red-line {
+    width: 70px;
+    height: 5px;
+    background-color: #d3b975;
+    border-radius: 10px;
+    margin: 7px auto;
+    transform: translateX(5px) !important;
+    /* Moves 5px to the right; use negative for left */
+    margin-top: 20px !important;
+  }
+
+  .row-card {
+    padding-bottom: 0px !important;
+  }
+
+  .card-link2 {
+    padding-left: 0px;
+  }
+
+  .blogu-card-button {
+    padding-left: 0px;
+  }
+
+  .blogu-row2 {
+    padding-top: 0px !important;
+  }
+
+  .makala-author {
+    line-height: 3rem;
+  }
+
+  .mahubiri-page-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+  }
+
+  .mahubiri-page-row2 {
+    background-color: #231f20;
+    padding-top: 50px;
+    color: white;
+  }
+  .matangazo-page-row {
+    padding-top: 130px;
+    padding-left: 10px;
+    padding-right:10px;
+  }
+  .mahubiri-page-row {
+    padding-top: 130px;
+    padding-left: 10px;
+    padding-right:10px;
+  }
+
+  .mahubiri-page-text {
+    font-family: inherit;
+    white-space: pre-line;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.67rem;
+  }
+
+  .mahubiri-page-date {
+    padding-bottom: 15px;
+    font-size: 0.8rem;
+  }
+  .dropdown-menu {
+    background-color: rgba(35, 31, 32, 0);
+    /* Background color with opacity */
+  }
+  .horizontal-line {
+    width: 85%;
+    height: 2px;
+    background-color: #aba7a5;
+  }
+  .blogu-text {
+    font-size: 20px;
+  }
+}
+
+.index-bottom img {
+  position: relative;
+}
+
+.index-bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width:100%;
+  height:100%;
+  background: linear-gradient(to top, #231f20 0%, rgba(35, 31, 32, 0) 30%);
+  z-index: 1;
+  pointer-events: none; /* Ensures the overlay doesn't interfere with clicks on the image */
+}
+
+.matukio-carousel-bottom img {
+  position: relative;
+}
+
+.matukio-carousel-bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, #161415 0%, rgba(35, 31, 32, 0) 30%);
+  z-index: 1;
+  pointer-events: none; /* Ensures the overlay doesn't interfere with clicks on the image */
+}
+
+.discover-section {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+}
+.discover-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc;
+}
+.discover-text {
+  text-transform: uppercase;
+  margin: 0 15px;
+  color: #d3b975;
+  background: #1c1b1c;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section1 {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line1 {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #231f20;
+}
+.discover-text1 {
+  text-transform: uppercase;
+  margin: 0 15px;
+  color: #231f20;
+  font-weight: 600;
+  background: white;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section2 {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line2 {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #231f20;
+}
+.discover-text2 {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: #231f20;
+  font-weight: 600;
+  background: white;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section-vyama {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line-vyama {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #aba7a5;
+}
+.discover-text-vyama {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: white;
+  font-weight: 600;
+  background: #161415;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section-maktaba {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line-maktaba {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #aba7a5;
+}
+.discover-text-maktaba {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: white;
+  font-weight: 600;
+  background: #161415;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section-podikasiti {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line-podikasiti {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #aba7a5;
+}
+.discover-text-podikasiti {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: white;
+  font-weight: 600;
+  background: #161415;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section-ratiba {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line-ratiba {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #aba7a5;
+}
+.discover-text-ratiba {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: white;
+  font-weight: 600;
+  background: #161415;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section4 {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line4 {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #231f20;
+}
+.discover-text4 {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: #231f20;
+  font-weight: 600;
+  background: white;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section5 {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line5 {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #231f20;
+}
+.discover-text5 {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: #231f20;
+  font-weight: 600;
+  background: #ecdfd5;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section6 {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line6 {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #231f20;
+}
+.discover-text6 {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: #231f20;
+  font-weight: 600;
+  background: white;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section7 {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line7 {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #231f20;
+}
+.discover-text7 {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: #231f20;
+  font-weight: 600;
+  background: white;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+
+.discover-section-uongozi {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line-uongozi {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #231f20;
+}
+.discover-text-uongozi {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: #231f20;
+  font-weight: 600;
+  background: white;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section-matukio {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line-matukio {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #aba7a5;
+}
+.discover-text-matukio {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: white;
+  font-weight: 600;
+  background: #161415;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section-mahubiri {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line-mahubiri {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #aba7a5;
+}
+.discover-text-mahubiri {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: white;
+  font-weight: 600;
+  background: #161415;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section-makala {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line-makala {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #aba7a5;
+}
+.discover-text-makala {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: white;
+  font-weight: 600;
+  background: #161415;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section-blogu {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line-blogu {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #aba7a5;
+}
+.discover-text-blogu {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: white;
+  font-weight: 600;
+  background: #161415;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+.discover-section-matangazo {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.discover-line-matangazo {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #aba7a5;
+}
+.discover-text-matangazo {
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: white;
+  font-weight: 600;
+  background: #161415;
+  border-radius: 0.2rem;
+  padding: 3px 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}

@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="carousel blogcarousel" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active carousel-blog matukio-carousel-bottom">
+                <img src="{{ubatizo.picha.url}}" class="d-block w-100" alt="church">
+                <div class="carousel-caption carousel-caption1">
+                    <p class="blog-text">MT-AMBROSI TAGASTE sakramenti ya</p><br>
+                    <h5 class="blog-title">ubatizo</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid sakramenti-container">
+        <div class="row py-2">
+            <div class="col-sm">
+                <div class="sakramenti-title pb-4"><span>ubatizo<i class="fa-solid fa-dove space-left"></i></span></div>
+                <div class="sakramenti-text">{{ubatizo.maelezo}}
+                </div>
+                <div class="sakramenti-title2 pt-5"><span>pakua nakala </span></div>
+                <div class="sakramenti-nakala pt-3">
+                    {% for ubatiz in ubatizo.documents.all %}
+                    <a href="{{ubatiz.upload_file.url}}" class="link" download>{{ubatiz.title}}<i class="fa-solid fa-download download-color"></i></a>
+                    {% endfor %} 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% endblock %}

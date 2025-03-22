@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+   
+
+    <div class="carousel blogcarousel" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active carousel-blog matukio-carousel-bottom">
+                <img src="{{wagonjwa.picha.url}}" class="d-block w-100" alt="church">
+                <div class="carousel-caption carousel-caption1">
+                    <p class="blog-text">MT-AMBROSI TAGASTE sakramenti ya</p><br>
+                    <h5 class="blog-title">upako wa wagonjwa</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid sakramenti-container">
+        <div class="row pt-2">
+            <div class="col-sm pb-3">
+                <div class="sakramenti-title pb-4"><span>upako wa wagonjwa<i class="fa-solid fa-hands-praying space-left"></i></span></div>
+                <div class="sakramenti-text">{{wagonjwa.maelezo}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

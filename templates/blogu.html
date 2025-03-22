@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+    <div class="carousel blogcarousel" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active carousel-blog matukio-carousel-bottom">
+                <img src="{{pic.picha.url}}" class="d-block w-100" alt="church">
+                <div class="carousel-caption carousel-caption1">
+                    <p class="blog-text">MT-AMBROSI TAGASTE</p><br>
+                    <h5 class="blog-title">BLOGU</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid blogu-container">
+        <div class="discover-section-blogu pt-4">
+            <div class="discover-line-blogu"></div>
+            <div class="discover-text-blogu"><i class="fa-solid fa-blog space-right"></i>PERUZI<i
+                    class="fa-solid fa-cross space-left"></i></div>
+            <div class="discover-line-blogu"></div>
+        </div>
+        <div class="row row-blog gx-3 gy-4">
+            {% for Blog in Blogs %}
+            <div class="col-12 col-sm-6 col-md-6">
+                <a href="{% url 'blogu_page' Blog.id %}" class="blog-blogu-link">
+                    <div class="card shadow card-cards h-100 ">
+                        <img src="{{ Blog.picha.url }}" class="card-img-top card-blogu-cards-img-top" alt="church">
+                        <div class="card-body blogu-body">
+                            <p class="card-blogu-title"><i class="bi bi-calendar2-check-fill"></i>{{Blog.get_swahili_date}}</p>
+                            <p class="card-text card-cards-text">{{Blog.title}}
+                            </p>
+                            <a href="{% url 'blogu_page' Blog.id %}" class="card-link blogu-link">Soma zaidi<span class="space-left"><i class="bi bi-chevron-right"></i></span></a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+
+            <div class="pagination-container text-center pt-5">
+                <nav aria-label="page navigation">
+                    <ul class="pagination justify-content-center mb-0">
+                        {% if Blogs.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{Blogs.previous_page_number}}">Uliopita</a>
+                        </li>
+                        {% endif %}
+                        <li class="page-item disabled">
+                            <span class="page-link">Ukurasa {{Blogs.number}} | {{Blogs.paginator.num_pages}}</span>
+                        </li>
+                        {% if Blogs.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{Blogs.next_page_number}}">Ufuatao</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+            
+        </div>
+    </div>
+
+    {% endblock%}

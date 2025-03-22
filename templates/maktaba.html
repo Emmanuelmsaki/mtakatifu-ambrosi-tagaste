@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+      
+    <div class="carousel blogcarousel" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active carousel-blog matukio-carousel-bottom">
+                <img src="{{pic.picha.url}}" class="d-block w-100" alt="church">
+                <div class="carousel-caption carousel-caption1">
+                    <p class="blog-text">MT-AMBROSI TAGASTE</p><br>
+                    <h5 class="blog-title">maktaba ya picha</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid maktaba-container">
+        <div class="discover-section-maktaba pt-3">
+            <div class="discover-line-maktaba"></div>
+            <div class="discover-text-maktaba"><i class="fa-solid fa-images space-right"></i>PICHA ZA MATUKIO<i class="fa-solid fa-cross space-left"></i></div>
+            <div class="discover-line-maktaba"></div>
+        </div>
+        <div class="row row-maktaba gx-3 gy-4">
+            {% for librar in libraries %}
+            <div class="col-12 col-sm-6 col-md-4">
+                <a href="{% url 'maktaba_page' librar.id %}" class="card-makala-cards-link">
+                    <div class="card shadow card-maktaba-cards h-100 ">
+                        <div class="card-body card-blogu-body">
+                            <p class="card-blogu-title"><i class="bi bi-calendar2-check-fill"></i>{{librar.get_swahili_date}}</p>
+                            <p class="card-text card-cards-text">{{librar.title}}</p>
+                            <span class="card-maktaba-cards-title"><i class="fa-solid fa-location-dot"></i>{{librar.location}}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+
+            <div class="pagination-container text-center pt-5">
+                <nav aria-label="page navigation">
+                    <ul class="pagination justify-content-center mb-0">
+                        {% if libraries.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{libraries.previous_page_number}}">Uliopita</a>
+                        </li>
+                        {% endif %}
+                        <li class="page-item disabled">
+                            <span class="page-link">Ukurasa {{libraries.number}} | {{libraries.paginator.num_pages}}</span>
+                        </li>
+                        {% if libraries.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{libraries.next_page_number}}">Ufuatao</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+           
+        </div>
+    </div>
+
+    
+    {% endblock %}

@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Parokia Ya Mtakatifu Ambrosi</title>
+  <link rel="stylesheet" href="{% static 'assets/package/swiper-bundle.min.css' %}" />
+  <link rel="icon" href="{% static 'assets/images/72.png' %}" sizes="16x16" type="image/png">
+  <!-- Apple touch icons for iOS devices -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/72.png' %}">
+  <!--Bootstrap css-->
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css1/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/bootstrap-icons/font/bootstrap-icons.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/fontawesome/css/all.css' %}" />
+</head>
+
+<body>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+    <div class="container-fluid">
+      <span class="navbar-brand me-auto text-white"><img src="{% static 'assets/images/71.jpeg' %}" alt="church"
+          class="oval-image"><br />MT-AMBROSI<br />
+        TAGASTE
+      </span>
+      <div class="offcanvas offcanvas-end offcanvas-fullscreen" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+            <img src="{% static 'assets/images/71.jpeg' %}" alt="church" class="oval-image"><br />MT-AMBROSI<br />
+            TAGASTE
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a href="{% url 'index' %}" class="nav-link mx-lg-2 ">Nyumbani</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="{% url 'matangazo' %}">Matangazo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="{% url 'matukio' %}">Matukio</a>
+            </li>
+            <li class="nav-item ">
+              <div class="dropdown">
+                <a class="nav-link mx-lg-2" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Sakramenti
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item hover-move" href="{% url 'ubatizo' %}">ubatizo</a></li>
+                  <li><a class="dropdown-item hover-move" href="{% url 'ndoa' %}">ndoa</a></li>
+                  <li><a class="dropdown-item hover-move" href="{% url 'ekaristi' %}">ekaristi takatifu</a>
+                  </li>
+                  <li><a class="dropdown-item hover-move" href="{% url 'kipaimara' %}">kipaimara</a></li>
+                  <li><a class="dropdown-item hover-move" href="{% url 'toba' %}">toba</a></li>
+                  <li><a class="dropdown-item hover-move" href="{% url 'wagonjwa' %}">upako wa wagonjwa</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <a class="nav-link mx-lg-2" href="#" data-bs-toggle="dropdown" role="button" id="dropdownMenuLink2"
+                  aria-expanded="false">Vyama Vya Kitume</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+                  <li><a class="dropdown-item  hover-move" href="{% url 'jumuiya' %}">jumuiya</a></li>
+                  <li><a class="dropdown-item  hover-move" href="{% url 'kanda' %}">kanda</a></li>
+                  <li><a class="dropdown-item  hover-move" href="{% url 'uwaka' %}">uwaka</a></li>
+                  <li><a class="dropdown-item  hover-move" href="{% url 'wawata' %}">wawata</a></li>
+                  <li><a class="dropdown-item  hover-move" href="{% url 'viwawa' %}">viwawa</a></li>
+                  <li><a class="dropdown-item  hover-move" href="{% url 'vyama' %}">vyama vingine</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'blogu' %}" class="nav-link mx-lg-2">Blogu</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <!--End Navbar-->
+
+  {% block content %}
+
+  {% endblock %}
+  <!--footer-->
+  <footer>
+    <div class="container-fluid contena2 mt-0">
+      <div class="row text-sm-start logo-row">
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="centa-logo">
+            <i class="fa-solid fa-church"></i><br />MT-AMBROSI<br />
+            TAGASTE
+          </div>
+          <div class="footer3">
+            <span>KANISA KATOLIKI</span><br />
+            <span>JIMBO KUU LA BAGAMOYO</span><br />
+            <span>DEKANIA YA MBEZI LOUIS</span><br />
+            <span>PAROKIA YA MT-AMBROSI TAGASTE</span><br />
+            <span>DAR ES SALAAM</span>
+            <span class="separator">|</span>
+            <span>TANZANIA</span>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+          <h5 class="footer-heads">Kuhusu sisi</h5>
+          <ul class="list-unstyled">
+            <li><a href="{% url 'historia' %}" class="footer2 footer-hover">Historia yetu</a> </li>
+            <li><a href="{% url 'imani' %}" class="footer2 footer-hover">Imani yetu</a></li>
+            <li><a href="{% url 'uongozi' %}" class="footer2 footer-hover">Uongozi</a></li>
+            <li><a href="{% url 'ratiba' %}" class="footer2 footer-hover">Ratiba za kanisani</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+          <h5 class="footer-heads">Tembelea</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://www.radiomaria.co.tz" target="_blank" class="footer2 footer-hover">Redio
+                Maria</a>
+            </li>
+            <li>
+              <a href="https://www.wordproject.org/bibles/sw" target="_blank" class="footer2 footer-hover">Biblia
+                mtandaoni</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+          <h5 class="footer-heads">Wasiliana nasi</h5>
+          <ul class="list-unstyled">
+            <li>
+              <i class="fa-solid fa-location-dot footer2-1"></i> <a href="https://maps.app.goo.gl/sQjtbqWz3jB6dpRA8"
+                target="_blank" class="footer2 footer-hover" title="Open in Google Maps">Mbezi ,
+                Tanzania</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope footer2-1"></i><a href="mailto:{{messag.email_url}}"
+                class="footer2 footer-hover" target="_blank">{{messag.email_url}}</a>
+            </li>
+            <li>
+              <span class="footer2"><i class="fa-solid fa-phone footer2-1"></i><a href="tel:{{messag.phone_number}}"
+                class="footer2 footer-hover" target="_blank">{{messag.phone_number}}</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Line with Bootstrap utilities --> '
+      <div class="mx-auto my-3 horizontal-line"></div>
+      <div class="row footer-terms">
+        <div class="col-sm">
+          <div class="footer-icons">
+            <a href="#"><i class="fa-brands fa-instagram icon-hover footer-icons1"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter icon-hover footer-icons1"></i></a>
+            <a href="#"><i class="bi bi-facebook icon-hover footer-icons1"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube icon-hover footer-icons1"></i></a>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="footer1">
+            <p>&copy; <span id="currentYear" class="space-right"></span>MT-AMBROSI
+              <span class="separator">|</span>
+              Haki Zote Zimehifadhiwa.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="footer-links">
+            <a href="{% url 'sera' %}" class="footer-hover">Sera ya Faragha</a>
+            <span class="separator">|</span>
+            <a href="{% url 'masharti' %}" class="footer-hover">Sheria na Masharti</a>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4 mt-4">
+        <div class="col-sm">
+          <div class="d-flex justify-content-center text-white">
+            <a href="https://wa.me/255622984011" class="designer" target="_blank"><span class="text-white">Developed
+                By</span> Eng MsakiTech Xpert
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!--javascript codes-->
+   <!--js for sharing on social medias-->
+   <script src="{% static 'assets/js/share.js' %}" defer></script>
+
+  <!--footer current year-->
+  <script src="{% static 'assets/js/footertime.js' %}" defer></script>
+  <!--javascript bootstrap-->
+  <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}" defer></script>
+
+  <!--javascript code for moving to another active link-->
+  <script src="{% static 'assets/js/activelink.js' %}" defer></script>
+  <!--somo carousel automatic time -->
+  <script src="{% static 'assets/js/carouseltime.js' %}" defer></script>
+  <!--to make the card button-->
+  <script src="{% static 'assets/js/cardbutton.js' %}" defer></script>
+  <!--for footer uongozi swiper-->
+  <script src="{% static 'assets/package/swiper-bundle.min.js' %}" defer></script>
+
+
+
+</body>
+
+</html>

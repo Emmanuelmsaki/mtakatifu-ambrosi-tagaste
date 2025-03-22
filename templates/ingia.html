@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+  <div class="container-fluid jisajili-container">
+    <div class="jisajili-overlay"><img src="{% static 'assets/images/47.jpg' %}" alt="church"></div>
+    <div class="row jisajili-page-row">
+      <div class="col-sm">
+        <div class="card shadow card-jisajili-cards h-100 ">
+          <div class="card-body card-ratiba-body">
+            <div class="text-center">
+              <span class="form-head d-flex justify-content-center pb-2 pt-2">INGIA</span>
+              <span class="form-head2 pb-5">MT-AMBROSI TAGASTE<span class="form-head-icons"><i
+                    class="fa-solid fa-church"></i></span></span>
+            </div>
+
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags  == 'error' %}
+                        <center><span class="font-message-form" style="color:firebrick;">{{message}}</span></center>
+                    {% else %}
+                        <center><span class="font-message-form" style="color:dodgerblue;">{{message}}</span></center>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+            <form method="POST">
+
+              {% csrf_token %}
+
+              <div class="mb-3 mt-3 jisajili-form">
+                <label for="email" class="form-label">Barua pepe</label>
+                <input type="text" class="form-control form-control1" name="email" id="email" autocomplete="on" required>
+              </div>
+              <div class="mb-4 jisajili-form">
+                <label for="password" class="form-label">Neno la siri</label>
+                <input type="password" class="form-control form-control1" name="password" id="password" required>
+              </div>
+              <div class="mb-3 d-flex justify-content-start jisajili-form">
+                <a href="{% url 'forgetpassword' %}" class="jisajili-link">Je umesahau neno la siri?</a>
+              </div>
+              <div class="pt-3 d-flex justify-content-center">
+                <button type="submit" class="btn btn-form">Ingia</button>
+              </div>
+              <div class="mt-2 d-flex justify-content-center jisajili-form">
+                Je hauna akaunti?<a href="{% url 'jisajili' %}" class="jisajili-link1">Jisajili</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ {% endblock %}

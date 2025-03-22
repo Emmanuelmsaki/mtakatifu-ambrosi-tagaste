@@ -1,0 +1,71 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="carousel blogcarousel" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active carousel-blog matukio-carousel-bottom">
+                <img src="{{pici.picha.url}}" class="d-block w-100" alt="church">
+                <div class="carousel-caption carousel-caption1">
+                    <p class="blog-text">MT-AMBROSI TAGASTE</p><br>
+                    <h5 class="blog-title">matukio yajayo</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid matukio-container">
+        <div class="discover-section-matukio pt-1">
+            <div class="discover-line-matukio"></div>
+            <div class="discover-text-matukio"><i class="bi bi-calendar2-check-fill space-right"></i>USIKOSE HUDHURIA<i class="fa-solid fa-cross space-left"></i></div>
+            <div class="discover-line-matukio"></div>
+        </div>
+        <div class="row row-blog gx-3 gy-3">
+            {% for event in events %}
+            <div class="col-12 col-sm-6 col-md-6">
+                <a href="{% url 'matukio_page' event.id %}" class="card-makala-cards-link">
+                    <div class="card card-matukio-cards h-100 ">
+                        <img src="{{event.picha.url}}" class="card-img-top card-matukio-cards-img-top" alt="church">
+                        <div class="card-body card-blogu-body"> 
+                            <div class="d-flex justify-content-left align-items-center gap-3">
+                                <div class="date-section">
+                                    <span class="date-month">{{event.mwezi}}</span>
+                                    <span class="date-day">{{event.siku}}</span>
+                                </div>
+                                <div>
+                                    <p class="card-text card-matukio-cards-text">{{event.title}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+
+            <div class="pagination-container text-center pt-4">
+                <nav aria-label="page navigation">
+                    <ul class="pagination justify-content-center mb-0">
+                        {% if events.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{events.previous_page_number}}">Uliopita</a>
+                        </li>
+                        {% endif %}
+                        <li class="page-item disabled">
+                            <span class="page-link">Ukurasa {{events.number}} | {{events.paginator.num_pages}}</span>
+                        </li>
+                        {% if events.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{events.next_page_number}}">Ufuatao</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+            
+        </div>
+    </div>
+
+    {% endblock %}

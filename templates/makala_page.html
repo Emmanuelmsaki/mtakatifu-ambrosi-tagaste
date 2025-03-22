@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="container-fluid blog-page-container">
+        <div class="blog-page-date">{{Articles.get_swahili_date}}</div>
+        <div class=" blog-page-title d-flex justify-content-center text-center">
+            <span class="makala-page-header">{{Articles.title}}</span>
+        </div>
+        <div class="carousel blog-page-carousel mt-3" data-bs-ride="carousel">
+            <div class="carousel-inner ">
+                <div class="carousel-item active carousel-blog">
+                    <img src="{{Articles.picha.url}}" class="d-block w-100" alt="church">
+                </div>
+            </div>
+        </div>
+        <div class="row blog-page-row mt-3">
+            <div class="col-12 col-md-9 border-md-right blogu-page-col-right-space">
+                <div class="blog-page-text">{{Articles.maelezo}}
+                </div>
+                <div class="page-blog-author">mwandishi:<span class="author1">{{Articles.author}}</span></div>
+            </div>
+            <div class="col-12 col-md-3 blog-page-share2 text-center">
+                <span class="blog-page-share1">SAMBAZA</span>
+                <div class="blog-page-share">
+                    <span><a href="#" id="email-share" target="_blank" title="Share on email"><i
+                                class="fa-solid fa-envelope icon-hover footer-icons1"></i></a></span>
+                    <span><a href="#" id="x-share" target="_blank" title="Share on x"><i
+                                class="fa-brands fa-x-twitter icon-hover footer-icons1"></i></a></span>
+                    <span><a href="#" id="whatsapp-share" target="_blank" title="Share on whatsapp"><i
+                                class="fa-brands fa-whatsapp icon-hover footer-icons1"></i></a></span>
+                </div>
+            </div>
+        </div>
+        <div class=" my-3 horizontal-line-blog-page"></div>
+    </div>
+
+    {% endblock %}

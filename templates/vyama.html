@@ -1,0 +1,61 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+   
+      
+    <div class="carousel blogcarousel" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active carousel-blog matukio-carousel-bottom">
+                <img src="{{pic.picha.url}}" class="d-block w-100" alt="church">
+                <div class="carousel-caption carousel-caption1">
+                    <p class="blog-text">MT-AMBROSI TAGASTE</p><br>
+                    <h5 class="blog-title">vyama vyetu</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid vyama-container">
+        <div class="discover-section-vyama pt-2">
+            <div class="discover-line-vyama"></div>
+            <div class="discover-text-vyama"><i class="fa-solid fa-people-group space-right"></i>JIHUSISHE<i class="fa-solid fa-cross space-left"></i></div>
+            <div class="discover-line-vyama"></div>
+        </div>
+        <div class="row row-jumuiya gx-3 gy-4">
+            {% for vyama in vyamaz %}
+            <div class="col-12 col-sm-6 col-md-4">
+                <a href="{% url 'vyama_page1' vyama.id %}" class="card-makala-cards-link">
+                    <div class="card shadow card-mahubiri-cards h-100 ">
+                        <div class="card-body card-blogu-body text-center">
+                            <p class="card-text card-cards-text">{{vyama.Jina_la_chama}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+
+            <div class="pagination-container text-center pt-5">
+                <nav aria-label="page navigation">
+                    <ul class="pagination justify-content-center mb-0">
+                        {% if vyamaz.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{vyamaz.previous_page_number}}">Uliopita</a>
+                        </li>
+                        {% endif %}
+                        <li class="page-item disabled">
+                            <span class="page-link">Ukurasa {{vyamaz.number}} | {{vyamaz.paginator.num_pages}}</span>
+                        </li>
+                        {% if vyamaz.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{vyamaz.next_page_number}}">Ufuatao</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+           
+        </div>
+    </div>
+    
+    {% endblock %}

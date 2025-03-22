@@ -1,0 +1,43 @@
+{% extends 'base1.html'%}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-fluid changia-container">
+    <div class="row changia-row">
+        <div class="col-sm top-space">
+            <div class="changia-title pb-4">changia</div>
+            <div class="changia-text">{{gives.taarifa}}
+            </div>
+            <div class="changia-form shadow mt-5">
+                <div class="pt-3">
+                    <div class="text-center">
+                        <span class="changia-icon-size"><i class="bi bi-phone"></i></span>
+                    </div>
+                    <div class="text-center">
+                        <span class="changia-card-title">Kupitia simu</span>
+                    </div>
+                    <div class="mb-4 changia-card-text">
+                       {{gives.kwa_simu}}
+                    </div>
+                </div>
+            </div>
+            <div class="changia-form shadow mt-5">
+                <div class="pt-3">
+                    <div class="text-center">
+                        <span class="changia-icon-size"><i class="bi bi-credit-card-fill"></i></span>
+                    </div>
+                    <div class="text-center">
+                        <span class="changia-card-title">Kupitia benki</span>
+                    </div>
+                    <div class="mb-4 changia-card-text">
+                        {{gives.kwa_benki}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

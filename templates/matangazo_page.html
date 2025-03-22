@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+      
+    <div class="container-fluid mahubiri-page-container">
+        <div class="row matangazo-page-row">
+            <div class="col-sm">
+                <div class="mahubiri-page-date">{{Announcements.get_swahili_date}}</div>
+                <div class="mahubiri-page-title d-flex justify-content-center pb-3">matangazo ya leo</div>
+                <div class="mahubiri-page-text">{{Announcements.matangazo}}</div>
+                <div class="matangazo-nakala pt-4 text-center">
+                    {% for announce in Announcements.documents.all %}
+                    <a href="{{announce.upload_file.url}}" class="link" download>{{announce.title}}<i class="fa-solid fa-download download-color"></i></a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

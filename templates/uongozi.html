@@ -1,0 +1,109 @@
+{% extends 'base1.html'%}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="container-fluid uongozi-container mb-5">
+        <div class="row">
+            <div class="col-sm top-space text-center">
+                <H5 class="uongozi-title ">MAPADRI</H5>
+                <div class="discover-section-uongozi pb-3">
+                    <div class="discover-line-uongozi"></div>
+                    <div class="discover-text-uongozi"><i class="fa-solid fa-dove space-right"></i>MT-AMBROSI<i
+                            class="fa-solid fa-cross space-left"></i></div>
+                    <div class="discover-line-uongozi"></div>
+                </div>
+                <div class="swiperuongozi mt-4">
+                    <div class="swiper-wrapper">
+                        {% for mapadr in mapadri %}
+                        <div class="swiper-slide">
+                            <div class="card shadow card-podikasiti-cards ">
+                                <img src="{% static 'assets/images/15.jpg' %}" class="card-img-top podikasiti-img" alt="church">
+                                <div
+                                    class="card-img-overlay d-flex flex-column justify-content-end card-img-overlay-uongozi text-center">
+                                    <div class="mb-4">
+                                        <img src="{{mapadr.picha.url}}" class="uongozi-img">
+                                    </div>
+                                    <h5 class="card-uongozi-title">{{mapadr.cheo}}</h5>
+                                    <h5 class="card-uongozi-name">{{mapadr.jina}}</h5>
+                                    <p class="card-uongozi-text">{{mapadr.maelezo}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-sm text-center">
+                <H5 class="uongozi-title">VIONGOZI WA KANISANI</H5>
+                <div class="discover-section-uongozi pb-3">
+                    <div class="discover-line-uongozi"></div>
+                    <div class="discover-text-uongozi"><i class="fa-solid fa-dove space-right"></i>MT-AMBROSI<i
+                            class="fa-solid fa-cross space-left"></i></div>
+                    <div class="discover-line-uongozi"></div>
+                </div>
+                <div class="swiperuongozi1 mt-4">
+                    <div class="swiper-wrapper">
+                        {% for kanisa in kanisani %}
+                        <div class="swiper-slide">
+                            <div class="card shadow card-podikasiti-cards ">
+                                <img src="{% static 'assets/images/15.jpg' %}" class="card-img-top podikasiti-img" alt="church">
+                                <div
+                                    class="card-img-overlay d-flex flex-column justify-content-end card-img-overlay-uongozi text-center">
+                                    <div class="mb-4">
+                                        <img src="{{kanisa.picha.url}}" class="uongozi-img">
+                                    </div>
+                                    <h5 class="card-uongozi-title">{{kanisa.cheo}}</h5>
+                                    <h5 class="card-uongozi-name">{{kanisa.jina}}</h5>
+                                    <p class="card-uongozi-text">{{kanisa.chama}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                       
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-sm text-center">
+                <H5 class="uongozi-title">VIONGOZI WA JUMUIYA</H5>
+                <div class="discover-section-uongozi pb-3">
+                    <div class="discover-line-uongozi"></div>
+                    <div class="discover-text-uongozi"><i class="fa-solid fa-dove space-right"></i>MT-AMBROSI<i
+                            class="fa-solid fa-cross space-left"></i></div>
+                    <div class="discover-line-uongozi"></div>
+                </div>
+                <div class="swiperuongozi2 mt-4">
+                    <div class="swiper-wrapper">
+                        {% for jumuiy in jumuiya %}
+                        <div class="swiper-slide">
+                            <div class="card shadow card-podikasiti-cards ">
+                                <img src="{% static 'assets/images/15.jpg' %}" class="card-img-top podikasiti-img" alt="church">
+                                <div
+                                    class="card-img-overlay d-flex flex-column justify-content-end card-img-overlay-uongozi text-center">
+                                    <div class="mb-4">
+                                        <img src="{{jumuiy.picha.url}}" class="uongozi-img">
+                                    </div>
+                                    <h5 class="card-uongozi-title">{{jumuiy.cheo}}</h5>
+                                    <h5 class="card-uongozi-name">{{jumuiy.jina}}</h5>
+                                    <p class="card-uongozi-text"><span class="space-right">Jumuiya ya</span>{{jumuiy.Jina_la_jumuiya}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                          
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

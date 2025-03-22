@@ -1,0 +1,24 @@
+{% extends 'base1.html'%}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="container-fluid podikasiti-page-container top-space">
+        <div class="row maktaba-page-row pt-3">
+            {% for image in library_images %}
+            <div class="col-12 col-md-4">
+                <div class="carousel maktaba-page-carousel" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{image.picha.url}}" class="d-block w-100 maktaba-page-img" alt="church">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+
+    {% endblock %}

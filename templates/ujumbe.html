@@ -1,0 +1,48 @@
+{% extends 'base1.html'%}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="container-fluid ujumbe-container">
+        <div class="row jumuiya-page-row">
+            <div class="col-sm top-space">
+                <div class="ujumbe-page-title pb-4">tuma ujumbe / makala</div>
+                <div class="ujumbe-page-text">{{messag.taarifa}}
+                </div>
+                <div class="ujumbe-form2 shadow mt-5 text-center">
+                    <form action="#" class="pt-3">
+                        <span class="ujumbe-whatsapp">kwa WHATSAPP<span class="footer-whatsapp"><i
+                                    class="fa-brands fa-whatsapp icon-hover footer-icons1"></i></span></span>
+                        <div class="my-4  d-flex justify-content-center mb-4">
+                            <a href="{{messag.whatsapp_url}}" class="whatsapp-ujumbe-link py-2 btn-form1"
+                                target="_blank">Tuma Ujumbe</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="ujumbe-form2 shadow mt-5 text-center">
+                    <form action="#" class="pt-3">
+                        <span class="ujumbe-whatsapp">kwa Barua pepe<span><i
+                                    class="fa-solid fa-envelope icon-hover footer-icons1"></i></span></span>
+                        <div class="my-4  d-flex justify-content-center mb-4">
+                            <a href="mailto:{{messag.email_url}}" class="whatsapp-ujumbe-link btn-form2 py-2"
+                                target="_blank">Tuma Ujumbe</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="ujumbe-form2 shadow mt-5 text-center">
+                    <form action="#" class="pt-3">
+                        <span class="ujumbe-whatsapp">kwa Msaada wa haraka</span>
+                        <div class="mt-4 ujumbe d-flex justify-content-center">
+                            <span>PIGA</span>
+                        </div>
+                        <div class="mt-2 ujumbe d-flex justify-content-center mb-4">
+                            <span><i class="fa-solid fa-phone  icon-hover footer-icons1"></i>{{messag.phone_number}}</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

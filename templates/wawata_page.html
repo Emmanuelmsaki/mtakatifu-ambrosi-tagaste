@@ -1,0 +1,23 @@
+{% extends 'base1.html'%}
+{% load static %}
+
+{% block content %} 
+
+    <div class="container-fluid mahubiri-page-container top-space">
+        <div class="row jumuiya-page-row">
+            <div class="col-sm">
+                <div class="jumuiya-page-date">{{wawata.get_swahili_date}}</div>
+                <div class="jumuiya-page-title d-flex justify-content-center pb-3">matangazo ya leo</div>
+                <div class="jumuiya-page-text">{{wawata.maelezo}}
+                    <div class="jumuiya-nakala pt-4 text-center">
+                        {% for doc in wawata.documents.all %}
+                        <a href="{{doc.upload_file.url}}" class="link" download>{{doc.title}}<i class="fa-solid fa-download download-darkgray-color"></i></a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% endblock %}

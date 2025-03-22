@@ -1,0 +1,67 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="carousel blogcarousel" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active carousel-blog matukio-carousel-bottom">
+                <img src="{{pic.picha.url}}" class="d-block w-100" alt="church">
+                <div class="carousel-caption carousel-caption1">
+                    <p class="blog-text">MT-AMBROSI TAGASTE</p><br>
+                    <h5 class="blog-title">matangazo</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid matangazo-container mb-0">
+        <div class="discover-section-matangazo pt-4">
+            <div class="discover-line-matangazo"></div>
+            <div class="discover-text-matangazo"><i class="bi bi-megaphone-fill space-right"></i>SOMA MATANGAZO<i class="fa-solid fa-cross space-left"></i></div>
+            <div class="discover-line-matangazo"></div>
+        </div>
+        <div class="row row-blog gx-3 gy-4">
+            {% for Announcement in announcements %}
+            <div class="col-12 col-sm-6 col-md-4">
+                <a href="{% url 'matangazo_page' Announcement.id %}" class="card-makala-cards-link">
+                    <div class="card shadow card-matangazo-cards h-100 ">
+                        <div class="card-body card-blogu-body text-center">
+                            <p class="card-blogu-title"><i class="bi bi-calendar2-check-fill"></i><span class="card-makala-cards-title px-2 space-right">{{Announcement.weekday}}</span>{{Announcement.get_swahili_date}}</p>
+                            <p class="card-text card-cards-text">matangazo</p> 
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            
+            <div class="pagination-container text-center pt-5">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center mb-0">
+                        {% if announcements.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ announcements.previous_page_number }}">Uliopita</a>
+                            </li>
+                        {% endif %}
+            
+                        <li class="page-item disabled">
+                            <span class="page-link">Ukurasa {{ announcements.number }} | {{ announcements.paginator.num_pages }}</span>
+                        </li>
+            
+                        {% if announcements.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ announcements.next_page_number }}">Ufuatao</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+
+    
+    
+
+    {% endblock %}

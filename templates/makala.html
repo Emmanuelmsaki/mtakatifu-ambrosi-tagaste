@@ -1,0 +1,68 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+
+<div class="carousel blogcarousel" data-bs-ride="carousel">
+    <div class="carousel-inner ">
+        <div class="carousel-item active carousel-blog matukio-carousel-bottom">
+            <img src="{{pic.picha.url}}" class="d-block w-100" alt="church">
+            <div class="carousel-caption carousel-caption1">
+                <p class="blog-text">MT-AMBROSI TAGASTE</p><br>
+                <h5 class="blog-title">makala</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid makala-container1">
+    <div class="discover-section-makala pt-4">
+        <div class="discover-line-makala"></div>
+        <div class="discover-text-makala"><i class="fa-regular fa-newspaper space-right"></i>SOMA MAKALA<i
+                class="fa-solid fa-cross space-left"></i>
+        </div>
+        <div class="discover-line-makala"></div>
+    </div>
+    <div class="row row-blog gx-3 gy-4">
+        {% for Article in Articles %}
+        <div class="col-12 col-sm-6 col-md-6">
+            <a href="{% url 'makala_page' Article.id %}" class="card-makala-cards-link">
+                <div class="card card-makala-cards h-100">
+                    <img src="{{Article.picha.url}}" class="card-img-top card-makala-cards-img-top" alt="church">
+                    <div class="card-body card-makala-body">
+                        <div class="date-badge">{{Article.get_swahili_date}}</div>
+                        <p class="card-text card-makala-cards-text1">{{Article.title}}</p>
+                        <span class="card-makala-cards-title1">mwandishi : <span
+                                class="makala-author1">{{Article.author}}</span></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+
+        <div class="pagination-container text-center pt-4">
+            <nav aria-label="page navigation">
+                <ul class="pagination justify-content-center mb-0">
+                    {% if Articles.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{Articles.previous_page_number}}">Uliopita</a>
+                    </li>
+                    {% endif %}
+                    <li class="page-item disabled">
+                        <span class="page-link">Ukurasa {{Articles.number}} | {{Articles.paginator.num_pages}}</span>
+                    </li>
+                    {% if Articles.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{Articles.next_page_number}}">Ufuatao</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

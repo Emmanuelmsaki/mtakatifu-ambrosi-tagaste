@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="carousel blogcarousel" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active carousel-blog matukio-carousel-bottom">
+                <img src="{{pic.picha.url}}" class="d-block w-100" alt="church">
+                <div class="carousel-caption carousel-caption1">
+                    <p class="blog-text">MT-AMBROSI TAGASTE</p><br>
+                    <h5 class="blog-title">ratiba</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid ratiba-container">
+        <div class="discover-section-ratiba pt-2">
+            <div class="discover-line-ratiba"></div>
+            <div class="discover-text-ratiba"><i class="fa-solid fa-clock space-right"></i>RATIBA<i class="fa-solid fa-cross space-left"></i></div>
+            <div class="discover-line-ratiba"></div>
+        </div>
+        <div class="row row-blog gx-3 gy-3">
+            <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card shadow card-ratiba-cards h-100 ">
+                        <div class="card-body card-ratiba-body">
+                            <p class="card-text card-ratiba-title">MUDA wa ibada</p>
+                            <span class="card-ratiba-text ratiba-space"><span class="ratiba-time">jumatatu - jumamosi</span>:<br>{{ratiba.siku_za_juma}}</span>
+                            <span class="card-ratiba-text"><span class="ratiba-time">jumapili</span>: 
+                                <ul>
+                                    <li><span class="ratiba-time1">misa ya kwanza</span>:<br>{{ratiba.misa_ya_kwanza}}</li>
+                                    <li><span class="ratiba-time1">misa ya pili</span>:<br>{{ratiba.misa_ya_pili}}</li>
+                                    <li><span class="ratiba-time1">misa ya watoto</span>:<br>{{ratiba.misa_ya_watoto}}</li>
+
+                                </ul></span>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card shadow card-ratiba-cards h-100">
+                        <div class="card-body card-ratiba-body">
+                            <p class="card-text card-ratiba-title">muda wa maungamo</p>
+                            <span class="card-ratiba-text ratiba-space"><span class="ratiba-time">ijumaa</span>:<br>{{maungamo.ijumaa}}</span>
+                            <span class="card-ratiba-text"><span class="ratiba-time">jumamosi</span>:<br>{{maungamo.jumamosi}}</span>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card shadow card-ratiba-cards h-100">
+                        <div class="card-body card-ratiba-body">
+                            <p class="card-text card-ratiba-title">ratiba za ofisini</p>
+                            <span class="card-ratiba-text ratiba-space"><span class="ratiba-time">jumatatu - jumamosi</span>: <br>{{ofisini.siku_za_juma}}</span>
+                            <span class="card-ratiba-text"><span class="ratiba-time">jumapili</span>:<br>{{ofisini.jumapili}}</span>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

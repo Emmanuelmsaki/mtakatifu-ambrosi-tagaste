@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!--carousel-->
+<div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false">
+  <div class="carousel-indicators">
+    {% for Somo in Somos %}
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}"></button>
+    {% endfor %}
+  </div>
+  <div class="carousel-inner">
+    {% for Somo in Somos %}
+    <div class="carousel-item index-bottom {% if forloop.first %}active{% endif %}" data-bs-interval="3000">
+      <img src="{{Somo.picha.url}}" alt="church image" />
+      <div class="container contena1">
+        <span class="somo">{{Somo.somo_la}}</span><br />
+        <span class="current-date"></span>
+        <span class="separator1">|</span>
+        <span class="gospel-header">{{Somo.limetoka}}</span><br />
+        <div class="card-makala-link1 d-flex">
+          <a href="{% url 'mahubiri_page' latest_sermon.id %}" class="card-makala-link" type="btn">Tafakari<i
+              class="fa-solid fa-circle-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+<!--The card container-->
+<div class="container-fluid misabody mb-0">
+  <div class="row misarow1">
+    <div class="cols-sm">
+      <h5 class="misarow1-2">karibu parokia ya Mt-ambrosi</h5>
+      <div class="discover-section mt-4">
+        <div class="discover-line"></div>
+        <div class="discover-text"><i class="bi bi-stars space-right"></i>yoh 14:6<i
+            class="fa-solid fa-cross space-left"></i></div>
+        <div class="discover-line"></div>
+      </div>
+    </div>
+  </div>
+  <div class="swiper mt-4 misarow" id="card-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <a href="{% url 'matukio_page' next_event.id %}" class="card-link card3-link">
+          <div class="card shadow card3 h-100 ">
+            <div class="image-wrapper">
+              {% if next_event.picha %}
+              <img class="card-img-top" src="{{ next_event.picha.url }}" alt="church" />
+              {% else %}
+              <img class="card-img-top" src="{{pici.picha.url}}" alt="Default Event Image" />
+              {% endif %}
+              <div class="card-img-overlay card-img-overlay1">
+                <p class="card-title card-title-icon"><i
+                    class="bi bi-calendar2-check"></i>{{next_event.get_swahili_date}}</p>
+                <h3 class="card-text">{{next_event.title}}</h3>
+                <a href="{% url 'matukio_page' next_event.id %}" class="card-link5">soma zaidi</a>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="{% url 'mahubiri' %}" class="card-link card3-link">
+          <div class="card shadow card3 h-100 ">
+            <div class="image-wrapper">
+              <img class="card-img-top" src="{{pice.picha.url}}" alt="church" />
+              <div class="card-img-overlay card-img-overlay1">
+                <p class="card-title card-title-icon"><i class="bi bi-book-half"></i>MAHUBIRI</p>
+                <h3 class="card-text">Neno la mungu</h3>
+                <a href="{% url 'mahubiri' %}" class="card-link5">soma zaidi</a>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="{% url 'podikasiti' %}" class="card-link card3-link">
+          <div class="card shadow card3 h-100 ">
+            <div class="image-wrapper">
+              <img class="card-img-top" src="{{mainvideo.picha.url}}" alt="church" />
+              <div class="card-img-overlay card-img-overlay1">
+                <p class="card-title card-title-icon"><i class="fa-solid fa-microphone-lines"></i>Podikasiti</p>
+                <h3 class="card-text">Angalia video</h3>
+                <a href="{% url 'podikasiti' %}" class="card-link5">soma zaidi</a>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="{% url 'jumuiya' %}" class="card-link card3-link">
+          <div class="card shadow card3 h-100 ">
+            <div class="image-wrapper">
+              <img class="card-img-top" src="{{pica.picha.url}}" alt="church" />
+              <div class="card-img-overlay card-img-overlay1">
+                <p class="card-title card-title-icon"><i class="fa-solid fa-people-group"></i>Jumuiya</p>
+                <h3 class="card-text">Jumuiya zetu</h3>
+                <a href="{% url 'jumuiya' %}" class="card-link5">soma zaidi</a>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="{% url 'ratiba' %}" class="card-link card3-link">
+          <div class="card shadow card3 h-100 ">
+            <div class="image-wrapper">
+              <img class="card-img-top" src="{{pic.picha.url}}" alt="church" />
+              <div class="card-img-overlay card-img-overlay1">
+                <p class="card-title card-title-icon"><i class="fas fa-clock"></i>RATIBA</p>
+                <h3 class="card-text">Ratiba za kanisani</h3>
+                <a href="{% url 'ratiba' %}" class="card-link5">soma zaidi</a>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+
+  <!--The start of makala row-->
+  <div class="row misarow2">
+    <div class="cols-sm">
+      <h5 class="misarow1-2">tubuni na kuiamini injili</h5>
+      <div class="discover-section mt-4">
+        <div class="discover-line"></div>
+        <div class="discover-text"><i class="fa-solid fa-dove space-right"></i>{% if user.is_authenticated %}{{user.username}} {% else %}kesheni mkiomba{% endif %}<i
+            class="fa-solid fa-cross space-left"></i></div>
+        <div class="discover-line"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row card-makala-container d-flex gx-3">
+    <div class="col-12 col-md-8 mb-4 mb-md-0">
+      <div class="card card-makala shadow h-100">
+        <div class="image-makala-wrapper">
+          <img class="card-img-top" src="{{quote.picha.url}}" alt="church" />
+          <div class="card-img-overlay card-img-overlay1 card-makala-img-overlay">
+            <p class="card-makala-title">makala</p>
+            <h3 class="card-makala-text"><i class="fa fa-quote-left pe-2"></i>{{quote.nukuu}}<i class="fa fa-quote-right ps-2"></i><br>
+            </h3>
+            <span class="makala-author">{{quote.msemaji}}</span>
+            <div class="card-makala-link1 d-flex">
+              <a href="{% url 'makala' %}" type="btn" class="card-makala-link">soma makala</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 mb-4 mb-md-0 d-flex">
+      <div class="card shadow card1 card-top-border h-100">
+        <div class="card-body card-body1 d-flex flex-column">
+          <h5 class="card-title">Jihusishe</h5>
+          <p class="card-text">Uone kile ambacho Mungu anaweza kukufanyia</p>
+          {% if user.is_authenticated %}
+          <a href="{% url 'ondoka' %}" class="card-linko" type="btn"><i class="fa-solid fa-user"></i>
+            Ondoka<i class="fa-solid fa-up-right-from-square card-icon"></i></a>
+          {% else %}
+          <a href="{% url 'ingia' %}" class="card-linko" type="btn"><i class="fa-solid fa-user"></i>
+            Ingia<i class="fa-solid fa-up-right-from-square card-icon"></i></a>
+            {% endif %}
+          <a href="{% url 'changia' %}" class="card-linko" type="btn"><i class="fas fa-hand-holding-heart"></i>Changia<i
+              class="fa-solid fa-up-right-from-square card-icon"></i></a>
+          <a href="{% url 'ujumbe' %}" class="card-linko" type="btn"><i class="fas fa-paper-plane"></i>Tuma
+            ujumbe<i class="fa-solid fa-up-right-from-square card-icon"></i></a>
+          <a href="{% url 'live_stream' %}" class="card-linko" type="btn"><i class="bi bi-broadcast"></i>Matangazo live
+            <i class="fa-solid fa-up-right-from-square card-icon"></i></a>
+          <a href="{% url 'maktaba' %}" class="card-linko" type="btn"><i class="fa-solid fa-folder-open"></i>Maktaba ya
+            picha<i class="fa-solid fa-up-right-from-square card-icon"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--End of makala row-->
+<div class="container-fluid blogu-index-container">
+  <div class="row blogu-row d-flex justify-content-center">
+    <div class="col-sm text-center">
+      <div class="blogu-header">blogu yetu<i class="fa-solid fa-blog space-left"></i></div>
+      <h2 class="blogu-text">machapisho ya hivi karibuni</h>
+        <div class="red-line"></div>
+    </div>
+  </div>
+  <div class="swiper1 row-card gx-3 d-flex flex-nowrap mt-3" id="blogu-container">
+    <div class="swiper-wrapper">
+      {% for blog in recent_blogs %}
+      <div class="swiper-slide swiper-slide1">
+          <a href="{% url 'blogu_page' blog.id %}" class="blog-blogu-link">
+              <div class="card shadow card-index-blogu-cards h-100">
+                  <img src="{{ blog.picha.url }}" class="card-img-top card-cards-img-top" alt="{{ blog.title }}">
+                  <div class="card-body blogu-body">
+                      <p class="card-blogu-title"><i class="bi bi-calendar2-check-fill"></i> {{ blog.get_swahili_date }}</p>
+                      <p class="card-text card-cards-text">{{ blog.title }}</p>
+                      <a href="{% url 'blogu_page' blog.id %}" class="card-link blogu-link">
+                          Soma zaidi<span class="space-left"><i class="bi bi-chevron-right"></i></span>
+                      </a>
+                  </div>
+              </div>
+          </a>
+      </div>
+      {% endfor %}
+      
+    </div>
+  </div>
+  <div class="row blogu-row2 mt-4">
+    <div class="col-sm">
+      <!--diamond icons-->
+      <div class="navigation">
+        <div class="nav-button" id="scroll-left"><i class="bi bi-chevron-left"></i></div>
+        <div class="nav-button" id="scroll-right"><i class="bi bi-chevron-right"></i></div>
+      </div>
+      <div class="button-link1 d-flex">
+        <a href="{% url 'blogu' %}" class="blogu-button" type="btn">habari zaidi</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--The end of card container-->
+</div>
+
+{% endblock %}

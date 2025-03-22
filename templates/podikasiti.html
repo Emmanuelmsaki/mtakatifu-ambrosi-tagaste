@@ -1,0 +1,75 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-fluid podikasiti-container">
+    <div class="row podikasiti-row">
+        <div class="col-sm">
+            <div class="carousel podikasiti-carousel videoCarousel" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active videoCarousel2">
+                        <div class="carousel-overlay podikasiti-overlay">
+                            <h4 class="podikasiti-shadow">PODIKASITI ZETU</h4>
+                        </div>
+                        <video class="d-block w-100 carousel-video" autoplay muted loop>
+                            <source src="{{mainvideo.video.url}}" type="video/mp4">
+                            your browser does not support video tag
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid podikasiti-container2">
+    <div class="discover-section-podikasiti pt-4">
+        <div class="discover-line-podikasiti"></div>
+        <div class="discover-text-podikasiti"><i class="fa-solid fa-microphone-lines space-right"></i>ANGALIA<i
+                class="fa-solid fa-cross space-left"></i></div>
+        <div class="discover-line-podikasiti"></div>
+    </div>
+    <div class="row row-podikasiti gx-3 gy-3">
+        {% for podcast in podcasts %}
+        <div class="col-12 col-sm-6 col-md-4">
+            <a href="{% url 'podikasiti_page' podcast.id %}" class="card-makala-cards-link">
+                <div class="card shadow card-podikasiti-cards ">
+                    <img src="{{podcast.picha.url}}" class="card-img-top podikasiti-img" alt="church">
+                    <div class="card-img-overlay d-flex flex-column justify-content-end card-img-overlay-podikasiti">
+                        <div class="date-badge">{{podcast.get_swahili_date}}</div>
+                        <div class="icon-top-right">
+                            <i class="bi bi-play-fill"></i>
+                        </div>
+                        <h5 class="card-podikasiti-title pb-1">{{podcast.title}}</h5>
+                        <p class="card-podikasiti-text">{{podcast.maelezo|truncatewords:20}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+
+        <div class="pagination-container text-center pt-5">
+            <nav aria-label="page navigation">
+                <ul class="pagination justify-content-center mb-0">
+                    {% if podcasts.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{podcasts.previous_page_number}}">Uliopita</a>
+                    </li>
+                    {% endif %}
+                    <li class="page-item disabled">
+                        <span class="page-link">Ukurasa {{podcasts.number}} | {{podcasts.paginator.num_pages}}</span>
+                    </li>
+                    {% if podcasts.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{podcasts.next_page_number}}">Ufuatao</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

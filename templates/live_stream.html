@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="carousel blogcarousel" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active carousel-blog matukio-carousel-bottom">
+                <img src="{{mubashara.picha.url}}" class="d-block w-100" alt="church">
+                <div class="carousel-caption carousel-caption1">
+                    <p class="blog-text">MT-AMBROSI TAGASTE</p><br>
+                    <h5 class="blog-title">matangazo live</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid live-stream-container">
+        <div class="row live-stream-row pt-4">
+            <div class="col-sm">
+                <div class="d-flex justify-content-center text-center pt-4">
+                    <span class="live-stream-title pb-4">matangazo mubashara</span>
+                </div>
+                <div class="live-stream-text d-flex justify-content-center">{{mubashara.taarifa}}</div>
+                <div class="live-stream-text3 d-flex justify-content-center pb-3 pt-4">
+                    <span class="live-stream-title">TUTAKUWA LIVE</span>
+                </div>
+                <div class="live-stream-text2 d-flex justify-content-center">
+                    <span>{{mubashara.get_swahili_date}} : {{mubashara.weekday}}<ul>
+                            <li>{{mubashara.muda}}</li>
+                        </ul></span>
+                </div>
+                <div class="card-makala-link1 d-flex pt-3 mb-5">
+                    <a href="{{mubashara.link_url}}" target="_blank" type="btn" class="live-streaming-link">live<i class="spinner-grow spinner-grow-sm custom-spinner"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

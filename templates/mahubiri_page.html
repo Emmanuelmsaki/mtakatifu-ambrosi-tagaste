@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+    <div class="container-fluid mahubiri-page-container">
+        <div class="row mahubiri-page-row">
+            <div class="col-sm">
+                <div class="mahubiri-page-date">{{Sermons.get_swahili_date}}</div>
+                <div class="mahubiri-page-title d-flex justify-content-center pb-3">tafakari ya leo</div>
+                <div class="mahubiri-page-text">{{Sermons.tafakari}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

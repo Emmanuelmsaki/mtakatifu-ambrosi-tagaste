@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="container-fluid matukio-page-container">
+        <div class="row matukio-page-row">
+            <div class="col-sm">
+                <div class="carousel blog-page-carousel matukio-page-carousel" data-bs-ride="carousel">
+                    <div class="carousel-inner ">
+                        <div class="carousel-item active carousel-blog">
+                            <img src="{{Events.picha.url}}" class="d-block w-100" alt="church">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="matukio-page-row1 mt-4">
+                <div class="matukio-page-title mt-0 pb-3">
+                    {{Events.title}}
+                </div>
+                <div class="matukio-page-items d-flex flex-column pb-2">
+                    <span class="matukio-page-icons"><i class="fa-solid fa-location-dot"></i>{{Events.location}}</span>
+                    <span class="matukio-page-icons"><i class="bi bi-calendar2-check-fill"></i>{{Events.get_swahili_date}}</span>
+                    <span class="matukio-page-icons"><i class="fa-solid fa-clock"></i>{{Events.muda}}</span>
+                </div>
+                <div class="discover-section1 py-3">
+                    <div class="discover-line1"></div>
+                    <div class="discover-text1"><i class="fa-solid fa-pen space-right"></i>MAELEZO ZAIDI<i class="fa-solid fa-cross space-left"></i></div>
+                    <div class="discover-line1"></div>
+                </div>
+                <div class="matukio-page-text">{{Events.maelezo}}
+                </div>
+                <div class="jumuiya-nakala pt-4 text-center">
+                    {% for doc in Events.documents.all %}
+                    <a href="{{doc.upload_file.url}}" class="link" download>{{doc.title}}<i class="fa-solid fa-download download-darkgray-color"></i></a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
