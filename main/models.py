@@ -7,6 +7,9 @@ import uuid
 import datetime
 import locale
 from .mixins import SwahiliDateMixin
+from django.contrib.auth.models import AbstractUser, BaseUserManager
+from django.conf import settings
+
 
 class Masomo(models.Model):
     picha = models.ImageField(upload_to='pics',verbose_name='PICHA')
@@ -57,7 +60,7 @@ class AnnouncementDocument(models.Model):
     
 class Viwawa(SwahiliDateMixin,models.Model):
     created_at = models.DateField(auto_now_add=True)
-    maelezo = models.TextField(verbose_name='UJUMBE')
+    maelezo = models.TextField(verbose_name='TANGAZO')
 
     def __str__(self):
         return self.get_swahili_date()
@@ -76,7 +79,7 @@ class ViwawaDocument(models.Model):
     
 class Wawata(SwahiliDateMixin,models.Model):
     created_at = models.DateField(auto_now_add=True)
-    maelezo = models.TextField(verbose_name='UJUMBE')
+    maelezo = models.TextField(verbose_name='TANGAZO')
 
     def __str__(self):
         return self.get_swahili_date()
@@ -95,7 +98,7 @@ class WawataDocument(models.Model):
     
 class Uwaka(SwahiliDateMixin,models.Model):
     created_at = models.DateField(auto_now_add=True)
-    maelezo = models.TextField(verbose_name='UJUMBE')
+    maelezo = models.TextField(verbose_name='TANGAZO')
 
     def __str__(self):
         return self.get_swahili_date()
@@ -343,17 +346,27 @@ class Carourselkanda(models.Model):
         verbose_name="PICHA YA KANDA ZETU"
         verbose_name_plural = "PICHA YA KANDA ZETU"
 
+class CarourselUongozi(models.Model):
+    picha = models.ImageField(upload_to='pics',verbose_name='PICHA')
 
-class PodikasitiMainPageVideo(models.Model):
-    video = models.FileField(upload_to='videos/',verbose_name='VIDEO')
+    def __str__(self):
+        return "PICHA YA UONGOZI"
+
+    class Meta:
+        verbose_name="PICHA YA UONGOZI"
+        verbose_name_plural = "PICHA YA UONGOZI"
+
+
+class CarouselPodikasiti(models.Model):
     picha = models.ImageField(upload_to='pics',null=True,verbose_name='PICHA')
 
     def __str__(self):
-        return "PODIKASITI PIC & VIDEO"
+        return "PODIKASITI PICHA"
     
     class Meta:
-        verbose_name="PODIKASITI PIC & VIDEO"
-        verbose_name_plural = "PODIKASITI PIC & VIDEO"
+        verbose_name="PICHA YA PODIKASITI"
+        verbose_name_plural = "PICHA YA PODIKASITI" \
+        ""
 
 
     
@@ -361,8 +374,8 @@ class Podcast(SwahiliDateMixin,models.Model):
     picha = models.ImageField(upload_to='pics',verbose_name='PICHA')
     created_at = models.DateField(auto_now_add=True)
     title = models.CharField(max_length=50,verbose_name='TITLE')
-    video_url = models.URLField(verbose_name='VIDEO LINK')
-    maelezo = models.TextField(verbose_name='UJUMBE')
+    video_url = models.URLField(verbose_name='YOUTUBE LINK')
+    maelezo = models.TextField(max_length=255,verbose_name='UJUMBE')
 
     def __str__(self):
         return self.title.upper()  # Displays the name of the lesson
@@ -399,10 +412,10 @@ class Message(models.Model):
 class Mubashara(SwahiliDateMixin,models.Model):
     picha = models.ImageField(upload_to='pics', null=True,verbose_name='PICHA')
     taarifa = models.TextField(verbose_name='UJUMBE')
-    created_at = models.DateField(verbose_name='TAREHE')
-    weekday = models.CharField(max_length=255,verbose_name='SIKU YA JUMA')
-    muda = models.CharField(max_length=255,verbose_name='MUDA')
-    link_url = models.URLField(verbose_name='LINK')
+    created_at = models.DateField(null=True, blank=True,verbose_name='TAREHE')
+    weekday = models.CharField(blank=True,max_length=255,default="Hamna",verbose_name='SIKU YA JUMA')
+    muda = models.CharField( blank=True,max_length=255,default="Hamna",verbose_name='MUDA')
+    link_url = models.URLField( null=True, blank=True,verbose_name='YOUTUBE LINK')
 
     def __str__(self):
         return "LIVE MATANGAZO"
@@ -710,7 +723,7 @@ class VyamaDocument(models.Model):
 
 
 class Resetpassword(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
     reset_id = models.UUIDField(default=uuid.uuid4, unique=True, editable= False)
     created_when = models.DateTimeField(auto_now_add=True)
 
@@ -753,6 +766,42 @@ class KandaDocument(models.Model):
      def __str__(self):
          return self.title.upper()
 
+class CustomUserManager(BaseUserManager):
+    def create_user(self, email,password=None, **extra_fields):
+        if not email:
+            raise ValueError("Barua pepe inahitajika")
+        
+        email = self.normalize_email(email)
+        extra_fields.setdefault("is_active",False)     # User inactive until verified
+        user =self.model(email=email, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+    
+    def create_superuser(self,email,password=None, **extra_fields):
+        extra_fields.setdefault("is_staff",True)
+        extra_fields.setdefault("is_superuser",True)
+        extra_fields.setdefault("is_active", True)  # Superuser should always be active
+
+        return self.create_user(email,password,**extra_fields)
+    
+class CustomUser(AbstractUser):
+    username = None  # Remove username
+    email = models.EmailField(unique=True,verbose_name='BARUA PEPE')
+    first_name = models.CharField(max_length=100,verbose_name='JINA LA KWANZA')
+    last_name = models.CharField(max_length=100,verbose_name='JINA LA MWISHO')
+    
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["first_name", "last_name"]
+
+    objects = CustomUserManager()
+
+    def __str__(self):
+        return self.email
+    
+    class Meta:
+        verbose_name="USER MANAGEMENT"
+        verbose_name_plural = "USER MANAGEMENT"
 
 
 

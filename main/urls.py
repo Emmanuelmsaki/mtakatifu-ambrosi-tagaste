@@ -20,7 +20,6 @@ urlpatterns =[
     path('makala/',views.makala,name='makala'),
     path('makala_page/<str:pk>',views.makala_page,name='makala_page'),
     path('podikasiti/',views.podikasiti,name='podikasiti'),
-    path('podikasiti_page/<str:pk>',views.podikasiti_page,name='podikasiti_page'),
     path('changia/',views.changia,name='changia'),
     path('ujumbe/',views.ujumbe,name='ujumbe'),
     path('live_stream/',views.live_stream,name='live_stream'),
@@ -54,4 +53,5 @@ urlpatterns =[
     path('kanda_page/<int:chap>/',views.kanda_page,name='kanda_page'),
     path('kanda_page1/<int:chape>/',views.kanda_page1,name='kanda_page1'),
     path('verify_email/<str:uidb64>/<str:token>/', views.verify_email, name='verify_email'),
+     path('resend_verification/<int:user_id>/', views.resend_verification, name='resend_verification'),
 ]

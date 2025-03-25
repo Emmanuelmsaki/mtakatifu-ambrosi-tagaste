@@ -3,6 +3,10 @@ from datetime import datetime
 class SwahiliDateMixin:
     def get_swahili_date(self):
         """Translate the created_at field to Swahili."""
+
+        if not self.created_at:  # Check if created_at is None
+            return "Hamna tukio"  # Or return a default message or empty string
+        
         swahili_months = {
             "January": "Januari",
             "February": "Februari",

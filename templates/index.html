@@ -19,8 +19,14 @@
         <span class="separator1">|</span>
         <span class="gospel-header">{{Somo.limetoka}}</span><br />
         <div class="card-makala-link1 d-flex">
+          {% if latest_sermon %}
           <a href="{% url 'mahubiri_page' latest_sermon.id %}" class="card-makala-link" type="btn">Tafakari<i
               class="fa-solid fa-circle-arrow-right"></i></a>
+              {% else %}
+              <a href="#" class="card-makala-link disabled" type="btn" aria-disabled="true">
+                Tafakari <i class="fa-solid fa-circle-arrow-right"></i>
+              </a>
+            {% endif %}
         </div>
       </div>
     </div>
@@ -45,19 +51,26 @@
   <div class="swiper mt-4 misarow" id="card-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <a href="{% url 'matukio_page' next_event.id %}" class="card-link card3-link">
+        {% if next_event %}
+      <a href="{% url 'matukio_page' next_event.id %}" class="card-link card3-link">
+       {% else %}
+      <a href="#" class="card-link card3-link disabled" onclick="return false;">
+      {% endif %}
           <div class="card shadow card3 h-100 ">
             <div class="image-wrapper">
-              {% if next_event.picha %}
+              {% if next_event %}
               <img class="card-img-top" src="{{ next_event.picha.url }}" alt="church" />
-              {% else %}
-              <img class="card-img-top" src="{{pici.picha.url}}" alt="Default Event Image" />
-              {% endif %}
+            {% else %}
+              <img class="card-img-top" src="{{ pici.picha.url }}" alt="Default Event Image" />
+            {% endif %}
               <div class="card-img-overlay card-img-overlay1">
-                <p class="card-title card-title-icon"><i
-                    class="bi bi-calendar2-check"></i>{{next_event.get_swahili_date}}</p>
-                <h3 class="card-text">{{next_event.title}}</h3>
+                {% if next_event %}
+                <p class="card-title card-title-icon"><i class="bi bi-calendar2-check"></i> {{ next_event.get_swahili_date }}</p>
+                <h3 class="card-text">{{ next_event.title }}</h3>
                 <a href="{% url 'matukio_page' next_event.id %}" class="card-link5">soma zaidi</a>
+              {% else %}
+                <p class="card-title card-title-icon"><i class="bi bi-calendar2-check"></i> Hakuna Matukio Mapya</p>
+              {% endif %}
               </div>
             </div>
           </div>
@@ -81,7 +94,7 @@
         <a href="{% url 'podikasiti' %}" class="card-link card3-link">
           <div class="card shadow card3 h-100 ">
             <div class="image-wrapper">
-              <img class="card-img-top" src="{{mainvideo.picha.url}}" alt="church" />
+              <img class="card-img-top" src="{{pico.picha.url}}" alt="church" />
               <div class="card-img-overlay card-img-overlay1">
                 <p class="card-title card-title-icon"><i class="fa-solid fa-microphone-lines"></i>Podikasiti</p>
                 <h3 class="card-text">Angalia video</h3>
@@ -130,7 +143,7 @@
       <h5 class="misarow1-2">tubuni na kuiamini injili</h5>
       <div class="discover-section mt-4">
         <div class="discover-line"></div>
-        <div class="discover-text"><i class="fa-solid fa-dove space-right"></i>{% if user.is_authenticated %}{{user.username}} {% else %}kesheni mkiomba{% endif %}<i
+        <div class="discover-text"><i class="fa-solid fa-dove space-right"></i>{% if user.is_authenticated %}{{user.first_name}} {% else %}kesheni mkiomba{% endif %}<i
             class="fa-solid fa-cross space-left"></i></div>
         <div class="discover-line"></div>
       </div>
@@ -211,12 +224,12 @@
   <div class="row blogu-row2 mt-4">
     <div class="col-sm">
       <!--diamond icons-->
-      <div class="navigation">
+      <div class="navigation pt-2">
         <div class="nav-button" id="scroll-left"><i class="bi bi-chevron-left"></i></div>
         <div class="nav-button" id="scroll-right"><i class="bi bi-chevron-right"></i></div>
       </div>
       <div class="button-link1 d-flex">
-        <a href="{% url 'blogu' %}" class="blogu-button" type="btn">habari zaidi</a>
+        <a href="{% url 'blogu' %}" class="blogu-button" type="btn">blogu zaidi</a>
       </div>
     </div>
   </div>

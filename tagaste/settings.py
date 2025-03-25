@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'tagaste.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'churchDB',
+        'NAME': 'churchdb',
         'USER':'postgres',
         'PASSWORD':'1234',
         'HOST':'localhost'
@@ -144,6 +144,10 @@ EMAIL_USE_SSL=True
 EMAIL_HOST_USER="iammsacky@gmail.com"
 EMAIL_HOST_PASSWORD="bhyw hdcz pkjo wbqv"
 
+# Set token expiration time (in seconds)
+PASSWORD_RESET_TIMEOUT = 3600  # 1 hour (3600 seconds)
+
+AUTH_USER_MODEL = "main.CustomUser"
 
 AUTHENTICATION_BACKENDS = [
     'main.backends.EmailAuthBackend',  # Custom email login

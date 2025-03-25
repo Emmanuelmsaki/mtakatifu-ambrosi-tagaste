@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404,redirect
-from django.contrib.auth.models import User,auth
+from smtplib import SMTPException
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -42,7 +42,7 @@ from .models import Muda_wa_Maungamo
 from .models import Jumuiya,Jumuiya_page
 from .models import Vyama,Vyama_page
 from .models import MakalaQuotation
-from .models import PodikasitiMainPageVideo
+from .models import CarouselPodikasiti
 from .models import Resetpassword,CarourselMaktaba
 from .models import CarourselMatangazo,CarourselMatukio,CarourselRatiba,CarourselBlogu
 from .models import CarourselJumuiya,CarourselUwaka,CarourselWawata,CarourselViwawa,CarourselVyama
@@ -54,6 +54,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.utils.encoding import force_bytes, force_str
+User = get_user_model()
 
 
 
@@ -67,9 +68,9 @@ def index(request):
     pica = CarourselJumuiya.objects.first()
     pice = CarourselMahubiri.objects.first()
     pici = CarourselMatukio.objects.first()
-    mainvideo = PodikasitiMainPageVideo.objects.first()
+    pico = CarouselPodikasiti.objects.first()
 
-    return render(request,'index.html',{'Somos':Somos,'next_event': next_event,'recent_blogs':recent_blogs,'quote':quote,'pic':pic,'pica':pica,'pice':pice,'pici':pici,'mainvideo':mainvideo,'latest_sermon': latest_sermon})
+    return render(request,'index.html',{'Somos':Somos,'next_event': next_event,'recent_blogs':recent_blogs,'quote':quote,'pic':pic,'pica':pica,'pice':pice,'pici':pici,'pico':pico,'latest_sermon': latest_sermon})
 
 def ingia(request):
 
@@ -80,15 +81,24 @@ def ingia(request):
         user = authenticate(request, email = email, password = password)
 
         if user is not None:
-            login(request,user)
+            # Check if the user's account is active (i.e., email verified)
+            if user.is_active:
+                login(request, user)
 
-            if user.is_superuser or user.is_staff:  # Superuser check
-                return redirect("/admin/")
+                # Redirect superusers and staff to the admin page+
+                if user.is_superuser or user.is_staff:
+                    return redirect("/admin/")
 
-            return redirect('index')
+                # Redirect to the home page or dashboard
+                return redirect('index')
+
+            else:
+                # If user is registered but not verified, show the verification message
+                messages.error(request, "Bonyeza link iliyotumwa kwenye barua pepe yako ili kuthibitisha akaunti yako.")
+                return redirect('ingia')  # Stay on the login page
         
         else:
-            messages.error(request,"Taarifa ulizoingiza sio sahihi")
+            messages.error(request,"Taarifa ulizoingiza sio sahihi.")
             
             return redirect('ingia')
     
@@ -101,7 +111,8 @@ def ondoka(request):
 
 def jisajili(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
         email = request.POST.get('email')
         password = request.POST.get('password')
         password2 = request.POST.get('password2')
@@ -111,10 +122,6 @@ def jisajili(request):
         if password != password2:
             user_data_has_error = True
             messages.error(request,"Neno la siri halifanani.")
-
-        if User.objects.filter(username=username).exists():
-            user_data_has_error =True
-            messages.error(request,"Jina limeshatumika")
 
         if User.objects.filter(email=email).exists():
             user_data_has_error=True
@@ -128,7 +135,8 @@ def jisajili(request):
              return redirect('jisajili')
         else:
             new_user = User.objects.create_user(
-                username = username.upper(),
+                first_name = first_name,
+                last_name = last_name,
                 email = email,
                 password = password2
             )
@@ -147,14 +155,19 @@ def jisajili(request):
             email_message = EmailMessage(
                 subject=subject,
                 body=message,
-                from_email=settings.EMAIL_HOST_USER,
+                from_email=f'Mtakatifu Ambrosi <{settings.EMAIL_HOST_USER}>',
                 to=[email]
             )
             email_message.fail_silently = True
-            email_message.send()
 
-            messages.success(request,"Bonyeza link iliyotumwa kwenye barua pepe yako ili kuthibitisha akaunti yako")
-            return redirect('ingia')
+            # **Wrap email sending in try-except to handle SMTP errors**
+            try:
+                email_message.send()
+                messages.success(request, "Bonyeza link iliyotumwa kwenye barua pepe yako ili kuthibitisha akaunti yako.")
+                return redirect('ingia')
+            except SMTPException:
+                messages.error(request, "Imeshindikana kutuma barua pepe ya uthibitisho. Tafadhali jaribu tena baadaye.")
+                return redirect('jisajili')  # Redirect user without breaking the app
 
 
     return render(request,'jisajili.html')
@@ -169,16 +182,49 @@ def verify_email(request, uidb64, token):
         if default_token_generator.check_token(user,token):
             user.is_active =True #Activate the user
             user.save()
-            messages.success(request,"Barua pepe imethibitishwa. Ingia Sasa")
+            messages.success(request,"Barua pepe imethibitishwa. Ingia Sasa.")
             return redirect('ingia')
         else:
-            messages.error(request,"Link sio sahihi")
-            return redirect('index')
+            messages.error(request, "Link hii imeisha muda wake.")
+            return redirect('resend_verification', user_id=user.id)  # Redirect to resend verification page
         
-    except User.DoesNotExist:
+    except (User.DoesNotExist, ValueError, TypeError):
         messages.error(request,"Tatizo lilitokea wakati wa kuthibitisha barua pepe.")
         return redirect('index')
 
+def resend_verification(request, user_id):
+    try:
+        user = User.objects.get(pk=user_id)
+        
+        # Ensure the user is not already active
+        if user.is_active:
+            messages.info(request, "Akaunti yako tayari imethibitishwa.")
+            return redirect('index')
+
+        # Generate a new UID and token
+        uid = urlsafe_base64_encode(force_bytes(user.pk))
+        token = default_token_generator.make_token(user)
+
+        verification_link = f"http://{get_current_site(request).domain}/verify_email/{uid}/{token}"
+        subject = "Thibitisha Barua pepe"
+        message = f"Thibitisha Barua pepe yako kwa kutumia link hii: {verification_link}"
+
+        # Send the email
+        email_message = EmailMessage(
+            subject=subject,
+            body=message,
+            from_email=f'Mtakatifu Ambrosi <{settings.EMAIL_HOST_USER}>',
+            to=[user.email]
+        )
+        email_message.fail_silently = True
+        email_message.send()
+
+        messages.success(request, "Link mpya imetumwa kwenye barua pepe yako. Tafadhali angalia.")
+        return redirect('ingia')
+
+    except User.DoesNotExist:
+        messages.error(request, "Tatizo lilitokea wakati wa kutuma barua pepe.")
+        return redirect('index')
 
 def forgetpassword(request):
 
@@ -198,8 +244,8 @@ def forgetpassword(request):
             
             email_message = EmailMessage(
                  subject='Badilisha Neno la siri',
-                 body=F'Badilisha Neno la Siri kwa kutumia link apa chini:\n\n\n\n{full_password_reset_url}', 
-                 from_email='settings.EMAIL_HOST_USER', 
+                 body=F'Badilisha Neno la Siri kwa kubonyeza link apa chini:\n\n\n\n{full_password_reset_url}', 
+                 from_email=f'Mtakatifu Ambrosi <{settings.EMAIL_HOST_USER}>', 
                  to=[email] 
             )
 
@@ -233,11 +279,11 @@ def resetpassword(request,reset_id):
                 passwords_have_error = True
                 messages.error(request,"Neno la siri lazima angalau lianzie herufi 5.")
 
-            expiration_time =password_reset_id.created_when + timezone.timedelta(minutes=10)
+            expiration_time =password_reset_id.created_when + timezone.timedelta(minutes=60)
 
             if timezone.now()> expiration_time:
                 passwords_have_error = True
-                messages.error(request,"link imekuwa batili")
+                messages.error(request,"link imekuwa batili.")
                 password_reset_id.delete()
                 return redirect('forgetpassword')
 
@@ -248,7 +294,7 @@ def resetpassword(request,reset_id):
                 # Delete reset link after successful password change
                 password_reset_id.delete()
 
-                messages.success(request,'Neno la siri limebadilika. Sasa Ingia')
+                messages.success(request,'Neno la siri limebadilika. Sasa Ingia.')
                 return redirect('ingia')
             
             else:
@@ -267,7 +313,7 @@ def resettext(request,reset_id):
        return render(request,'resettext.html')
     
     else:
-       messages.error(request,'link sio sahihi')
+       messages.error(request,'link sio sahihi.')
        return redirect('forgetpassword')
 
 def matangazo(request):
@@ -352,18 +398,13 @@ def makala_page(request,pk):
 
 def podikasiti(request):
     podcasts_list = Podcast.objects.all().order_by('-created_at')
-    mainvideo = PodikasitiMainPageVideo.objects.first()
+    pic = CarouselPodikasiti.objects.first()
 
-    paginator = Paginator(podcasts_list ,3)
+    paginator = Paginator(podcasts_list ,9)
     page_number = request.GET.get('page')
     podcasts = paginator.get_page(page_number)
 
-    return render(request,'podikasiti.html',{'podcasts':podcasts,'mainvideo':mainvideo})
-
-def podikasiti_page(request,pk):
-    podcasts = Podcast.objects.get(id=pk)
-
-    return render(request,'podikasiti_page.html',{'podcasts':podcasts})
+    return render(request,'podikasiti.html',{'podcasts':podcasts,'pic':pic}) 
 
 def changia(request):
     gives = Give.objects.first()
@@ -423,8 +464,9 @@ def uongozi(request):
     mapadri = Mapadri.objects.all()
     kanisani = Viongozi_wa_kanisani.objects.all()
     jumuiya = Viongozi_wa_Jumuiya.objects.all()
+    pic =CarourselUongozi.objects.first()
 
-    return render(request,'uongozi.html',{'mapadri':mapadri,'kanisani':kanisani,'jumuiya':jumuiya})
+    return render(request,'uongozi.html',{'mapadri':mapadri,'kanisani':kanisani,'jumuiya':jumuiya,'pic':pic})
 
 def ubatizo(request):
     ubatizo = Ubatizo.objects.first()

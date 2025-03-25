@@ -32,7 +32,13 @@
                         </ul></span>
                 </div>
                 <div class="card-makala-link1 d-flex pt-3 mb-5">
+                    {% if mubashara.link_url%}
                     <a href="{{mubashara.link_url}}" target="_blank" type="btn" class="live-streaming-link">live<i class="spinner-grow spinner-grow-sm custom-spinner"></i></a>
+                    {% else %}
+                    <a href="#" class="live-streaming-link" aria-disabled="true">
+                        live<i class="spinner-grow spinner-grow-sm custom-spinner"></i>
+                    </a>
+                {% endif %}
                 </div>
             </div>
         </div>

@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from .models import CustomUser
 from .models import Masomo
 from .models import Announcement,AnnouncementDocument
 from .models import Event,EventDocument
@@ -32,12 +34,35 @@ from .models import Muda_wa_Maungamo
 from .models import Jumuiya,Jumuiya_page,JumuiyaDocument
 from .models import Vyama, Vyama_page,VyamaDocument
 from .models import MakalaQuotation
-from .models import PodikasitiMainPageVideo
+from .models import CarouselPodikasiti
 from .models import Resetpassword,CarourselRatiba,CarourselMaktaba,Carourselkanda
 from .models import CarourselMatangazo,CarourselMatukio,CarourselMahubiri,CarourselBlogu
 from .models import CarourselJumuiya,CarourselUwaka,CarourselWawata,CarourselViwawa,CarourselVyama
-from .models import Kanda,Kanda_page,KandaDocument
+from .models import Kanda,Kanda_page,KandaDocument,CarourselUongozi
 
+
+class CustomUserAdmin(UserAdmin):
+    model = CustomUser
+
+    list_display = ['email', 'first_name', 'last_name', 'is_active', 'is_staff', 'is_superuser']
+    search_fields = ['email', 'first_name', 'last_name']
+    ordering = ['email']
+
+    # Modify fieldsets without duplicates
+    fieldsets = (
+        (None, {'fields': ('email', 'password')}),
+        ('Personal Info', {'fields': ('first_name', 'last_name')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        ('Important dates', {'fields': ('last_login', 'date_joined')}),
+    )
+
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'first_name', 'last_name', 'password1', 'password2', 'is_staff', 'is_superuser'),
+        }),
+    )
+    
 class Vyama_pageInline(admin.TabularInline):
      model = Vyama_page  
      extra = 1  
@@ -190,7 +215,9 @@ class Jumuiya_pageAdmin(admin.ModelAdmin):
 admin.site.site_header = "MTAKATIFU AMBROSI-TAGASTE"
 admin.site.site_title = "Admin"
 admin.site.index_title = "Karibu Admin Panel"
+admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Carourselkanda)
+admin.site.register(CarourselUongozi)
 admin.site.register(CarourselBlogu)
 admin.site.register(CarourselVyama)
 admin.site.register(CarourselViwawa)
@@ -235,7 +262,7 @@ admin.site.register(Muda_wa_ibada)
 admin.site.register(Ratiba_za_ofisini)
 admin.site.register(Muda_wa_Maungamo)
 admin.site.register(MakalaQuotation)
-admin.site.register(PodikasitiMainPageVideo)
+admin.site.register(CarouselPodikasiti)
 admin.site.register(Kanda, KandaAdmin)
 admin.site.register(Kanda_page,Kanda_pageAdmin)
 admin.site.register(Vyama, VyamaAdmin)

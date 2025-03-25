@@ -18,9 +18,9 @@
                     {% if messages %}
                         {% for message in messages %}
                             {% if message.tags  == 'error' %}
-                                 <center><span class="font-message-form" style="color:firebrick;">{{message}}</span></center>
+                                 <center><div class="font-message-form" style="color:firebrick;">{{message}}</div></center>
                              {% else %}
-                                 <center><span class="font-message-form" style="color:dodgerblue;">{{message}}</span></center>
+                                 <center><div class="font-message-form" style="color:dodgerblue;">{{message}}</div></center>
                             {% endif %}
                         {% endfor %}
                     {% endif %}
@@ -28,10 +28,13 @@
                     <form method="POST">
                         {% csrf_token %}
                         <div class="mb-3 mt-3 jisajili-form">
-                            <label for="username" class="form-label">Jina</label>
-                            <input type="text" class="form-control form-control1" name="username" id="username" autocomplete="on" required>
+                            <label for="first_name" class="form-label">Jina la kwanza</label>
+                            <input type="text" class="form-control form-control1" name="first_name" id="first_name" autocomplete="on" required>
                         </div>
-                        
+                        <div class="mb-3 mt-3 jisajili-form">
+                            <label for="last_name" class="form-label">Jina la mwisho</label>
+                            <input type="text" class="form-control form-control1" name="last_name" id="last_name" autocomplete="on" required>
+                        </div>
                         <div class="mb-3 jisajili-form">
                             <label for="email" class="form-label">Barua pepe</label>
                             <input type="email" class="form-control form-control1" name="email" id="email" autocomplete="on" required>
