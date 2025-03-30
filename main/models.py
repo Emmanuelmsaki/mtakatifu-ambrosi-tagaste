@@ -208,7 +208,7 @@ class Article(SwahiliDateMixin,models.Model):
         verbose_name_plural = "MAKALA"
 
 class MakalaQuotation(models.Model):
-    nukuu = models.TextField(verbose_name='NUKUU')
+    nukuu = models.TextField(max_length=255,verbose_name='NUKUU')
     msemaji = models.CharField(max_length=50,verbose_name='MSEMAJI')
     picha = models.ImageField(upload_to='pics', null=True,verbose_name='PICHA')
 

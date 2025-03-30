@@ -23,23 +23,24 @@ document.addEventListener("DOMContentLoaded",
           slidesPerView: 3
         }
       },
-      // Navigation arrows
-      navigation: {
-        prevEl: '#scroll-left',  // Custom navigation left
-        nextEl: '#scroll-right', // Custom navigation right
+      
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
       },
     });
     const swiperuongozi = new Swiper('.swiperuongozi', {
       slidesPerView: 1,
       spaceBetween: 15,
-      loop:true,
+      loop: true,
       breakpoints: {
         768: {
           slidesPerView: 3
         }
       },
-      autoplay:{
-        delay:2000,
+      autoplay: {
+        delay: 2000,
       },
 
       // If we need pagination
@@ -51,14 +52,14 @@ document.addEventListener("DOMContentLoaded",
     const swiperuongozi1 = new Swiper('.swiperuongozi1', {
       slidesPerView: 1,
       spaceBetween: 15,
-      loop:true,
+      loop: true,
       breakpoints: {
         768: {
           slidesPerView: 3
         }
       },
-      autoplay:{
-        delay:2000,
+      autoplay: {
+        delay: 2000,
       },
 
       // If we need pagination
@@ -70,14 +71,14 @@ document.addEventListener("DOMContentLoaded",
     const swiperuongozi2 = new Swiper('.swiperuongozi2', {
       slidesPerView: 1,
       spaceBetween: 15,
-      loop:true,
+      loop: true,
       breakpoints: {
         768: {
           slidesPerView: 3
         }
       },
-      autoplay:{
-        delay:2000,
+      autoplay: {
+        delay: 2000,
       },
 
       // If we need pagination
