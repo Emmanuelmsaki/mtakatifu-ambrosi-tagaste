@@ -61,12 +61,6 @@ document.addEventListener("DOMContentLoaded",
       autoplay: {
         delay: 2000,
       },
-
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
     });
     const swiperuongozi2 = new Swiper('.swiperuongozi2', {
       slidesPerView: 1,
@@ -79,12 +73,6 @@ document.addEventListener("DOMContentLoaded",
       },
       autoplay: {
         delay: 2000,
-      },
-
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
       },
     });
   });

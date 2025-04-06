@@ -214,7 +214,7 @@ class Jumuiya_pageAdmin(admin.ModelAdmin):
 
 admin.site.site_header = "MTAKATIFU AMBROSI-TAGASTE"
 admin.site.site_title = "Admin"
-admin.site.index_title = "Karibu Admin Panel"
+admin.site.index_title = "Karibu Admin panel"
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Carourselkanda)
 admin.site.register(CarourselUongozi)
