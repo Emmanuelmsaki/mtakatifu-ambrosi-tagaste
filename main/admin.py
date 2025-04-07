@@ -212,9 +212,7 @@ class Jumuiya_pageAdmin(admin.ModelAdmin):
     list_filter = ('jumuiya',)  
     search_fields = ('jumuiya__Jina_la_jumuiya',)  
 
-admin.site.site_header = "MTAKATIFU AMBROSI-TAGASTE"
-admin.site.site_title = "Admin"
-admin.site.index_title = "Karibu Admin panel"
+
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Carourselkanda)
 admin.site.register(CarourselUongozi)
