@@ -66,8 +66,8 @@ class Viwawa(SwahiliDateMixin,models.Model):
         return self.get_swahili_date()
 
     class Meta:
-        verbose_name="VIWAWA"
-        verbose_name_plural = "VIWAWA" 
+        verbose_name="VIWAWA (MATANGAZO)"
+        verbose_name_plural = "VIWAWA (MATANGAZO)" 
 
 class ViwawaDocument(models.Model):
      matangazo = models.ForeignKey(Viwawa,related_name='documents',on_delete=models.CASCADE)
@@ -85,8 +85,8 @@ class Wawata(SwahiliDateMixin,models.Model):
         return self.get_swahili_date()
     
     class Meta:
-        verbose_name="WAWATA"
-        verbose_name_plural = "WAWATA"
+        verbose_name="WAWATA (MATANGAZO)"
+        verbose_name_plural = "WAWATA (MATANGAZO)"
 
 class WawataDocument(models.Model):
      matangazo = models.ForeignKey(Wawata,related_name='documents',on_delete=models.CASCADE)
@@ -104,8 +104,8 @@ class Uwaka(SwahiliDateMixin,models.Model):
         return self.get_swahili_date()
     
     class Meta:
-        verbose_name="UWAKA"
-        verbose_name_plural = "UWAKA"
+        verbose_name="UWAKA (MATANGAZO)"
+        verbose_name_plural = "UWAKA (MATANGAZO)"
 
 class UwakaDocument(models.Model):
      matangazo = models.ForeignKey(Uwaka,related_name='documents',on_delete=models.CASCADE)
