@@ -164,6 +164,7 @@ JAZZMIN_SETTINGS = {
     "user_avatar":"assets/images/avatar.jpg",
     "welcome_sign":"Welcome to the Admin Panel",
     "copyright":"MT.AMBROSI-TAGASTE",
+    "changeform_format": "single",
     "show_ui_builder":False,
     "icons": {
         "auth.Group": "fas fa-user-shield", 
