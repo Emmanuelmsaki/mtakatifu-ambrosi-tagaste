@@ -161,10 +161,12 @@ JAZZMIN_SETTINGS = {
     "site_header":"MT. AMBROSI - TAGASTE",
     "site_logo":"assets/images/71.jpeg",
     "site_logo_classes":"img-circle",
+    "user_avatar":"assets/images/avatar.jpg",
     "welcome_sign":"Welcome to the Admin Panel",
     "copyright":"MT.AMBROSI-TAGASTE",
     "show_ui_builder":False,
     "icons": {
+        "auth.Group": "fas fa-user-shield", 
         "main.Masomo":"fa-solid fa-book-open-reader",
         "main.Announcement":"fa-solid fa-bullhorn",
         "main.Viwawa":"fa-solid fa-bullhorn",
