@@ -8,6 +8,7 @@ from django.core.mail import EmailMessage
 from django.utils import timezone
 from django.urls import reverse
 from .models import * 
+import re
 from datetime import date, timedelta
 from .models import Masomo
 from .models import Announcement
@@ -54,9 +55,34 @@ from django.contrib.auth import get_user_model
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.utils.encoding import force_bytes, force_str
+
+
 User = get_user_model()
 
+def email(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
 
+        subject = f"New message from {name}"
+        full_message = f"Jina: {name}\nBarue Pepe: {email}\n\nUjumbe:\n{message}"
+
+        try:
+           email_message = EmailMessage(
+                subject=subject,
+                body=full_message,
+                from_email=settings.EMAIL_HOST_USER,  # Must be your verified sender
+                to=[settings.EMAIL_HOST_USER],  # You receive it
+                reply_to=[email],  # So when you click "Reply", it replies to the user
+            )
+           email_message.send()
+           messages.success(request, "Ujumbe umetumwa kwa mafanikio!")
+        except:
+            messages.error(request, "Imeshindikana kutuma ujumbe. Tafadhali jaribu tena.")
+        return redirect('email')
+    
+    return render(request, 'email.html')
 
 def index(request):
     Somos = Masomo.objects.order_by('id')
@@ -406,12 +432,24 @@ def podikasiti(request):
 
     return render(request,'podikasiti.html',{'podcasts':podcasts,'pic':pic}) 
 
+def podikasiti_page(request,id):
+    podcast = get_object_or_404(Podcast, id=id)
+
+     # Extract video ID from any YouTube URL
+    match = re.search(r'(?:v=|be/|embed/|shorts/)([\w\-]{11})', podcast.video_url)
+    video_id = match.group(1) if match else None
+    embed_url = f"https://www.youtube.com/embed/{video_id}" if video_id else ""
+
+    return render(request, 'podikasiti_page.html', {
+        'podcast': podcast,
+        'embed_url': embed_url
+    })
+
 def changia(request):
     gives = Give.objects.first()
 
     return render(request,'changia.html',{'gives':gives})
 
-@login_required
 def ujumbe(request):
     messag = Message.objects.first()
 
@@ -421,6 +459,19 @@ def live_stream(request):
     mubashara = Mubashara.objects.first()
 
     return render(request,'live_stream.html',{'mubashara':mubashara})
+
+def live_stream_page(request, id):
+    mubashara = get_object_or_404(Mubashara, id=id)
+
+    # Extract video ID from any YouTube URL
+    match = re.search(r'(?:v=|be/|embed/|shorts/)([\w\-]{11})', mubashara.link_url)
+    video_id = match.group(1) if match else None
+    embed_url = f"https://www.youtube.com/embed/{video_id}" if video_id else ""
+
+    return render(request, 'live_stream_page.html', {
+        'mubashara': mubashara,
+        'embed_url': embed_url
+    })
 
 def maktaba(request):
     # Fetch events with images (you can define this model with a ForeignKey to images)
@@ -499,7 +550,6 @@ def wagonjwa(request):
     return render(request,'wagonjwa.html', {'wagonjwa':wagonjwa})
 
 
-@login_required
 def jumuiya(request):
     jumuiyas_list = Jumuiya.objects.all().order_by('-created_at')
     pica = CarourselJumuiya.objects.first()
@@ -527,7 +577,6 @@ def jumuiya_page2(request,page_id):
     return render(request,'jumuiya_page2.html',{'jumuiya':page})
 
 
-@login_required
 def vyama(request):
     vyamaz_list = Vyama.objects.all().order_by('-created_at')
     pic = CarourselVyama.objects.first()
@@ -554,7 +603,6 @@ def vyama_page(request,chapage):
     return render(request,'vyama_page.html',{'cham':vyama})
 
 
-@login_required
 def uwaka(request):
     uwaka_list =Uwaka.objects.all().order_by('-created_at')
     pic = CarourselUwaka.objects.first()
@@ -571,7 +619,6 @@ def uwaka_page(request,pk):
     return render(request,'uwaka_page.html',{'uwaka':uwaka})
 
 
-@login_required
 def wawata(request):
     wawata_list = Wawata.objects.all().order_by('-created_at')
     pic = CarourselWawata.objects.first()
@@ -588,7 +635,6 @@ def wawata_page(request,pk):
     return render(request,'wawata_page.html',{'wawata':wawata})
 
 
-@login_required
 def viwawa(request):
     viwawa_list = Viwawa.objects.all().order_by('-created_at')
     pic = CarourselViwawa.objects.first()
@@ -613,7 +659,6 @@ def viwawa_page(request,pk):
 
     return render(request,'viwawa_page.html',{'viwawa':viwawa})
 
-@login_required
 def kanda(request):
     kandaz_list = Kanda.objects.all().order_by('-created_at')
     pic = Carourselkanda.objects.first()

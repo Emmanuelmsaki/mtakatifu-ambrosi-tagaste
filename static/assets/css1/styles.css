@@ -1,4 +1,64 @@
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: white;
+  margin: 0 auto;
+}
 
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+}
+.youtube-page-container {
+  padding-top: 0px;
+  background-color: #231f20;
+  color: white;
+  overflow: hidden;
+}
+.youtube-page-row {
+  padding: 0 0px;
+  background-color: white;
+  color: #231f20;
+  padding-bottom: 60px;
+}
+/* Override padding for tablets (between 768px and 1024px wide) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .email-page {
+        padding: 0 80px !important;
+    }
+}
+.email-page{
+    padding: 0 200px;
+    font-weight: 500;
+}
+.btn-email{
+  color: #fdf0e6;
+  background-color: #bf0a30;
+  padding:9px 40px;
+  border-radius: 1.25rem;
+  font-weight:500;
+  border: none;
+  cursor: pointer;
+}
+.btn-email:hover,
+.btn-email:focus,
+.btn-email:active {
+  color: #fdf0e6 !important;
+  background-color: #ab1837 !important;
+  outline: none;
+}
+textarea {
+  resize: none;
+  overflow: hidden;
+}
 .font-message-form{
   font-size: 1rem;
   font-weight: 600;
@@ -2217,6 +2277,12 @@
 }
 
 @media (max-width: 767.5px) {
+  .youtube-page-row {
+  padding-bottom: 20px;
+}
+   .email-page {
+    padding: 0 20px;
+  }
   .card-podikasiti-title {
     font-size: 1rem;
   }

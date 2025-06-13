@@ -25,7 +25,7 @@
     <div class="row row-podikasiti gx-3 gy-4">
         {% for podcast in podcasts %}
         <div class="col-12 col-sm-6 col-md-4">
-            <a href="{{podcast.video_url}}" target="_blank" class="card-makala-cards-link">
+            <a href="{% url 'podikasiti_page' podcast.id %}" target="_self" class="card-makala-cards-link">
                 <div class="card shadow card-podikasiti-cards ">
                     <img src="{{podcast.picha.url}}" class="card-img-top podikasiti-img" alt="church">
                     <div class="card-img-overlay d-flex flex-column justify-content-end card-img-overlay-podikasiti">
@@ -34,7 +34,7 @@
                             <i class="bi bi-play-fill"></i>
                         </div>
                         <h5 class="card-podikasiti-title pb-1">{{podcast.title}}</h5>
-                        <p class="card-podikasiti-text">{{podcast.maelezo}}</p>
+                        <p class="card-podikasiti-text">{{podcast.maelezo|truncatewords:20 }}</p>
                     </div>
                 </div>
             </a>

@@ -375,7 +375,7 @@ class Podcast(SwahiliDateMixin,models.Model):
     created_at = models.DateField(auto_now_add=True)
     title = models.CharField(max_length=50,verbose_name='TITLE')
     video_url = models.URLField(verbose_name='YOUTUBE LINK')
-    maelezo = models.TextField(max_length=255,verbose_name='UJUMBE')
+    maelezo = models.TextField(verbose_name='UJUMBE')
 
     def __str__(self):
         return self.title.upper()  # Displays the name of the lesson
@@ -398,8 +398,6 @@ class Give(models.Model):
 
 class Message(models.Model):
     taarifa = models.TextField(verbose_name='UJUMBE')
-    whatsapp_url = models.URLField(verbose_name='WHATSAPP LINK')
-    email_url = models.EmailField(verbose_name='BARUA PEPE')
     phone_number = models.CharField(max_length=30,verbose_name='NAMBA YA SIMU')
 
     def __str__(self):

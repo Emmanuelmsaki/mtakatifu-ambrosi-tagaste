@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.contrib.auth import get_user_model
 from .models import Sermon
 from .mixins import SwahiliDateMixin
+from django.conf import settings  # Import settings
 
 User = get_user_model()
 
@@ -35,7 +36,7 @@ def send_sermon_notification(sender, instance, created, **kwargs):
         send_mail(
             subject,
             message,
-            "iammsacky@gmail.com",  # From email (your sender email)
+            settings.EMAIL_HOST_USER,  # Use the email configured in settings.py
             recipient_list,
             fail_silently=False,
         )
