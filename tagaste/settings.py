@@ -225,6 +225,7 @@ JAZZMIN_SETTINGS = {
         "main.Vyama":"fa-solid fa-people-group",
         "main.CustomUser":"fa-solid fa-user",
         "main.Resetpassword":"fa-solid fa-unlock-keyhole",
+        "main.PaymentTransaction":"fa-solid fa-money-check-dollar",
     },
 }
 

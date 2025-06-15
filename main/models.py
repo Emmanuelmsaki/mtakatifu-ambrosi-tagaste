@@ -812,4 +812,8 @@ class PaymentTransaction(models.Model):
 
     def __str__(self):
         return f"{self.phone} - {self.amount} TZS - {self.status}"
+    
+    class Meta:
+        verbose_name="MIAMALA YA MALIPO"
+        verbose_name_plural = "MIAMALA YA MALIPO"
 

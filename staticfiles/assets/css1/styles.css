@@ -1,3 +1,26 @@
+.payment-font{
+  font-size:1.2rem;
+}
+.payment-font1{
+  font-size:1rem;
+}
+.changia-logo{
+  height:70px;
+  width:100px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+/* For Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.changia-azam-text{
+  color: white;
+  font-weight: 500;
+}
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -27,17 +50,27 @@
   padding: 0 0px;
   background-color: white;
   color: #231f20;
-  padding-bottom: 20px;
+  padding-bottom: 60px;
 }
 /* Override padding for tablets (between 768px and 1024px wide) */
 @media (min-width: 768px) and (max-width: 1024px) {
     .email-page {
         padding: 0 80px !important;
     }
+    .changia-form1 {
+         margin-left: 50px !important;
+         margin-right: 50px !important;
+    }
+}
+.email-form1 {
+  background-color: #efecee;
+  padding: 40px 40px;
+  border-radius: 1.25rem;
 }
 .email-page{
-    padding: 0 200px;
+    padding: 0 400px;
     font-weight: 500;
+    padding-bottom:40px !important;
 }
 .btn-email{
   color: #fdf0e6;
@@ -379,6 +412,13 @@ textarea {
   border-radius: 1.25rem;
   margin-left: 50px;
   margin-right: 50px;
+}
+.changia-form1 {
+  background-color: #161415;
+  padding: 20px 30px;
+  border-radius: 1.25rem;
+  margin-left: 300px;
+  margin-right: 300px;
 }
 .changia-card-text {
   font-family: inherit;
@@ -2277,6 +2317,9 @@ textarea {
 }
 
 @media (max-width: 767.5px) {
+  .youtube-page-row {
+  padding-bottom: 20px;
+}
    .email-page {
     padding: 0 20px;
   }
@@ -2352,6 +2395,9 @@ textarea {
     padding-right: 10px;
   }
   .changia-form {
+   margin: 0;
+  }
+  .changia-form1 {
    margin: 0;
   }
   .changia-card-title {
