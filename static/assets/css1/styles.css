@@ -418,39 +418,13 @@ textarea {
 .ujumbe-container {
   padding: 0 90px;
 }
-.changia-form {
-  background-color: #161415;
-  padding: 20px 30px;
-  border-radius: 1.25rem;
-  margin-left: 50px;
-  margin-right: 50px;
-}
+
 .changia-form1 {
   background-color: #161415;
   padding: 20px 30px;
   border-radius: 1.25rem;
   margin-left: 300px;
   margin-right: 300px;
-}
-.changia-card-text {
-  font-family: inherit;
-  white-space: pre-line;
-  padding: 0 30px;
-  color: white;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.67rem;
-  padding-top:30px;
-}
-.changia-card-title {
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.changia-icon-size {
-  font-size: 5rem;
-  color: white;
 }
 .ujumbe-form2 {
   background-color: #161415;
@@ -2406,17 +2380,8 @@ textarea {
   .blogu-page-col-right-space {
     padding-right: 10px;
   }
-  .changia-form {
-   margin: 0;
-  }
   .changia-form1 {
    margin: 0;
-  }
-  .changia-card-title {
-    font-size: 0.9rem;
-  }
-  .changia-icon-size {
-    font-size: 3rem;
   }
   .ujumbe {
     font-size: 1.5rem;
