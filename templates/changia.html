@@ -10,13 +10,40 @@
             <div class="changia-title pb-4">changia</div>
             <div class="changia-text">{{gives.taarifa}}
             </div>
+            <div class="changia-form1 shadow mt-5">
+                <div class="pt-4">
+                    <div class="text-center mb-3">
+                        <span ><img src="{% static 'assets/images/azamlogo.jpg' %}" class="changia-logo"></span>
+                    </div>
+                    <div class="text-center mb-4">
+                        <span class="changia-card-title">lipa na AzamPesa</span>
+                    </div>
+                    <form method="POST" action="{% url 'process_payment' %}">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <label for="phone" class="form-label changia-azam-text">Namba Ya Simu <span
+                                    class="required-star">*</span></label>
+                            <input type="text" class="form-control rounded-pill" id="phone" name="phone" required
+                                placeholder="+255XXXXXXXX">
+                        </div>
+                        <div class="mb-4">
+                            <label for="number" class="form-label changia-azam-text">Kiasi <span
+                                    class="required-star">*</span></label>
+                            <input type="number" class="form-control rounded-pill" id="number" name="number" required placeholder="Tsh">
+                        </div>
+                        <div class="mb-4 mt-5 text-center">
+                            <button type="submit" class="btn btn-email">Tuma</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <div class="changia-form shadow mt-5">
                 <div class="pt-2">
                     <div class="text-center">
                         <span class="changia-icon-size"><i class="bi bi-phone"></i></span>
                     </div>
                     <div class="text-center">
-                        <span class="changia-card-title">simu</span>
+                        <span class="changia-card-title">mitandao mingine</span>
                     </div>
                     <div class="mb-3 changia-card-text">{{gives.kwa_simu}}
                     </div>

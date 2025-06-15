@@ -16,25 +16,26 @@
                 {% endfor %}
             </div>
             {% endif %}
-
+            <div class="email-form1 shadow mt-4">
             <form method="POST" action="{% url 'email' %}">
                 {% csrf_token %}
                 <div class="mb-4">
                     <label for="name" class="form-label">Jina <span class="required-star">*</span></label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <input type="text" class="form-control rounded-pill" id="name" name="name" required>
                 </div>
                 <div class="mb-4">
                     <label for="email" class="form-label">Barua Pepe <span class="required-star">*</span></label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+                    <input type="email" class="form-control rounded-pill" id="email" name="email" required>
                 </div>
                 <div class="mb-5">
                     <label for="message" class="form-label">Ujumbe <span class="required-star">*</span></label>
-                    <textarea class="form-control" id="message" rows="5" name="message" required></textarea>
+                    <textarea class="form-control rounded-4" id="message" rows="6" name="message" required></textarea>
                 </div>
                 <div class="mb-4 mt-5 text-center">
                     <button type="submit" class="btn btn-email">Tuma</button>
                 </div>
             </form>
+            </div>
         </div>
     </div>
 </div>

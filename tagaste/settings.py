@@ -259,3 +259,18 @@ JAZZMIN_UI_TWEAKS = {
         "success": "btn-success"
     }
 }
+
+
+# AzamPay API Credentials (Replace with your actual sandbox credentials)
+AZAMPAY_APP_NAME = 'ChurchPay'
+AZAMPAY_CLIENT_ID = '86adc4a3-ebff-4ee9-9155-b491a6ef7279'
+AZAMPAY_CLIENT_SECRET = 'IYFvS/Rr6nfVJFHcg830GvDXYM7ry2MGzi8Eg6swsQ85qwYuTJHtwgF9S1YjSlj7N1er/NyDdwspewSc5H/sEt4Egwe59vn2FDV8HfXhjbj09D3kQuCI7jjQC+9c3ek7P8MEl3eMKpN+aSOWS78sdmxecl6Ru5cJh0pOn6pYIJV6uROjrlDWN8FFpNF7T9Tnr2+WQTJiWbNDhoDVWB7fxm5rGhe7IZ7pgBtB7RPEZsJ+XBdZ81WBI23lK/lbgaLgLcNy5h13paJNa4mUXdUBN+iYWVM6GToDMgDDdNBDGh7wBq7+s2tn5Uj+u+8dRpRvyhBCtPLYHU4wEaigLaNRoTL/W80OI24fgBgYayLb2I7trgjizaQJbcUDwSz6rkSaQaKsCtuGeLYVYi+bPBTuZuHTFEmcFf3DDF1QZZ7m82Ghovm/b5eHiJQL1A5DcaIw1zESRZrelew8XF6zdY+y50J4CkA+ZwaevN01D/KhcdlFiQLNka0J0DGOos8UpHU3W8mxFLegi+9sXSyWeWHVjKziG69DAgxlDJO2zPGHPCK0rWoN4BFwGXqIz3qloSsef9LFXdLisS1iFk5F9AquGDFup6ruaHWc3CSLf6dszXFLK2Ri8zL5uHZEPI2f05lNKAIjZFuLfAuHFgsmmRaIkmYtNsH+46eBx0eo6yj+x+4='
+
+# AzamPay Base URLs
+AZAMPAY_SANDBOX_AUTHENTICATOR_URL = 'https://authenticator-sandbox.azampay.co.tz'
+AZAMPAY_SANDBOX_CHECKOUT_URL = 'https://sandbox.azampay.co.tz'
+
+# Your callback URL for AzamPay (This should be a publicly accessible URL)
+# Example: If your domain is example.com, this might be 'https://example.com/azampay-callback/'
+# IMPORTANT: For Sandbox, register this URL in your AzamPay Sandbox portal.
+AZAMPAY_CALLBACK_URL = 'https://add5-197-186-17-186.ngrok-free.app/azampesa/callback/' # Adjust for production

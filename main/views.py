@@ -55,6 +55,15 @@ from django.contrib.auth import get_user_model
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.utils.encoding import force_bytes, force_str
+import json
+import requests
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+import uuid 
+import time
+from datetime import datetime
+from .models import Give, PaymentTransaction  # Add PaymentTransaction model
+
 
 
 User = get_user_model()
@@ -447,8 +456,191 @@ def podikasiti_page(request,id):
 
 def changia(request):
     gives = Give.objects.first()
+    return render(request, 'changia.html', {'gives': gives})
 
-    return render(request,'changia.html',{'gives':gives})
+AZAMPAY_ACCESS_TOKEN = None
+AZAMPAY_TOKEN_EXPIRY = 0  
+
+def get_azampay_token():
+    global AZAMPAY_ACCESS_TOKEN, AZAMPAY_TOKEN_EXPIRY
+
+    if AZAMPAY_ACCESS_TOKEN and AZAMPAY_TOKEN_EXPIRY > time.time() + 60:
+        return AZAMPAY_ACCESS_TOKEN
+
+    token_url = f"{settings.AZAMPAY_SANDBOX_AUTHENTICATOR_URL}/AppRegistration/GenerateToken"
+    headers = {'Content-Type': 'application/json'}
+    payload = {
+        "appName": settings.AZAMPAY_APP_NAME,
+        "clientId": settings.AZAMPAY_CLIENT_ID,
+        "clientSecret": settings.AZAMPAY_CLIENT_SECRET
+    }
+
+    try:
+        response = requests.post(token_url, headers=headers, json=payload)
+        response.raise_for_status()
+        token_data = response.json()
+
+        if token_data.get('success') and token_data['data'].get('accessToken'):
+            AZAMPAY_ACCESS_TOKEN = token_data['data']['accessToken']
+            expire_datetime_str = token_data['data']['expire']
+            expire_dt_object = datetime.strptime(expire_datetime_str, '%Y-%m-%dT%H:%M:%SZ')
+            AZAMPAY_TOKEN_EXPIRY = expire_dt_object.timestamp()
+
+            print(f"AzamPay token generated successfully. Expires at: {datetime.fromtimestamp(AZAMPAY_TOKEN_EXPIRY)}")
+            return AZAMPAY_ACCESS_TOKEN
+        else:
+            print(f"Failed to get AzamPay token: {token_data.get('message', 'Unknown error')}")
+            return None
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching AzamPay token: {e}")
+        return None
+
+PROVIDER_PREFIXES = {
+    'Airtel': ['+25578', '+25568'],
+    'Tigo': ['+25565', '+25571'],
+    'Mpesa': ['+25576', '+25575'],
+    'Azampesa': ['+25573', '+25574']
+}
+
+def detect_provider(phone):
+    for provider, prefixes in PROVIDER_PREFIXES.items():
+        if any(phone.startswith(prefix) for prefix in prefixes):
+            return provider
+    return 'Azampesa'
+
+def process_payment(request):
+    if request.method == 'POST':
+        phone_number = request.POST.get('phone')
+        amount_str = request.POST.get('number')
+
+        # Validate phone number format: +255 followed by exactly 9 digits
+        phone_pattern = r'^\+255\d{9}$'
+        if not phone_number or not re.match(phone_pattern, phone_number):
+            error_message = 'Tafadhali ingiza namba ya simu sahihi'
+            return render(request, 'payment_failed.html', {
+                'error_message': error_message,
+                'phone': phone_number,
+                'number': amount_str
+            })
+
+        # Validate amount is a valid float and within limits
+        try:
+            amount = float(amount_str)
+            if amount < 100:  # minimum amount e.g., 100 TZS
+                raise ValueError("Kiasi ni kidogo sana.")
+            if amount > 2000001:  # max amount e.g., 2,000,000 TZS
+                raise ValueError("Kiasi ni kikubwa sana.")
+        except (ValueError, TypeError) as e:
+            error_message = f'Kiasi si sahihi: {str(e)}'
+            return render(request, 'payment_failed.html', {
+                'error_message': error_message,
+                'phone': phone_number,
+                'number': amount_str
+            })
+
+        access_token = get_azampay_token()
+        if not access_token:
+            return render(request, 'payment_failed.html', {
+                'error_message': 'Imeshindikana kupata ruhusa ya malipo. Tafadhali jaribu tena.',
+                'phone': phone_number,
+                'number': amount_str
+            })
+
+        provider = detect_provider(phone_number)
+
+        checkout_url = f"{settings.AZAMPAY_SANDBOX_CHECKOUT_URL}/azampay/mno/checkout"
+        headers = {
+            'Content-Type': 'application/json',
+            'Authorization': f'Bearer {access_token}'
+        }
+        external_id = str(uuid.uuid4())
+
+        payload = {
+            "accountNumber": phone_number,
+            "amount": amount,
+            "currency": "TZS",
+            "externalId": external_id,
+            "provider": provider
+        }
+
+        print(f"Sending MNO Checkout request: {json.dumps(payload, indent=2)}")
+
+        try:
+            checkout_response = requests.post(checkout_url, headers=headers, json=payload)
+            checkout_response.raise_for_status()
+            response_data = checkout_response.json()
+
+            if response_data.get('success'):
+                transaction_id = response_data.get('transactionId')
+                message = response_data.get('message', 'Malipo yameanzishwa. Tafadhali angalia simu yako.')
+
+                # Save transaction in DB
+                PaymentTransaction.objects.create(
+                    external_id=external_id,
+                    phone=phone_number,
+                    amount=amount,
+                    status='pending',
+                    provider=provider,
+                    transaction_id=transaction_id
+                )
+
+                return render(request, 'payment_success.html', {
+                    'transaction_id': transaction_id,
+                    'message': message,
+                    'external_id': external_id
+                })
+            else:
+                error_message = response_data.get('message', 'Malipo yameshindwa kuanzishwa.')
+                print(f"AzamPay MNO Checkout failed: {error_message}")
+                return render(request, 'payment_failed.html', {
+                    'error_message': error_message,
+                    'phone': phone_number,
+                    'number': amount_str
+                })
+        except requests.exceptions.RequestException as e:
+            print(f"Error initiating AzamPay MNO Checkout: {e}")
+            return render(request, 'payment_failed.html', {
+                'error_message': f'Hitilafu imejitokeza wakati wa kuwasiliana na AzamPay: {e}',
+                'phone': phone_number,
+                'number': amount_str
+            })
+
+    return redirect('changia')
+
+def azampay_callback(request):
+    if request.method == 'POST':
+        try:
+            callback_data = json.loads(request.body)
+            print(f"Received AzamPay Callback: {json.dumps(callback_data, indent=2)}")
+
+            transaction_status = callback_data.get('transactionstatus')
+            reference_id = callback_data.get('reference')
+            utility_ref = callback_data.get('utilityref')
+            amount = callback_data.get('amount')
+            msisdn = callback_data.get('msisdn')
+            message = callback_data.get('message')
+            operator = callback_data.get('operator')
+            fsp_reference_id = callback_data.get('fspReferenceId')
+
+            try:
+                txn = PaymentTransaction.objects.get(external_id=utility_ref)
+                txn.status = transaction_status
+                txn.transaction_id = reference_id
+                txn.save()
+                print(f"Transaction {reference_id} updated in DB.")
+            except PaymentTransaction.DoesNotExist:
+                print(f"No matching transaction for external ID {utility_ref}")
+
+            return JsonResponse({"message": "Callback received successfully"}, status=200)
+
+        except json.JSONDecodeError:
+            print("Invalid JSON in AzamPay callback request body.")
+            return JsonResponse({"message": "Invalid JSON"}, status=400)
+        except Exception as e:
+            print(f"Error processing AzamPay callback: {e}")
+            return JsonResponse({"message": "Internal Server Error"}, status=500)
+    else:
+        return JsonResponse({"message": "Method Not Allowed"}, status=405)
 
 def ujumbe(request):
     messag = Message.objects.first()
