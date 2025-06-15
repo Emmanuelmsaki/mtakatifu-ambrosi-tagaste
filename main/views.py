@@ -496,9 +496,9 @@ def get_azampay_token():
         return None
 
 PROVIDER_PREFIXES = {
-    'Airtel': ['+25578', '+25568'],
-    'Tigo': ['+25565', '+25571'],
-    'Mpesa': ['+25576', '+25575'],
+    'Airtel_Money': ['+25578', '+25568'],
+    'Mixx_by_Yas': ['+25565', '+25571'],
+    'HaloPesa': ['+25562',],
     'Azampesa': ['+25573', '+25574']
 }
 
@@ -528,7 +528,7 @@ def process_payment(request):
             amount = float(amount_str)
             if amount < 100:  # minimum amount e.g., 100 TZS
                 raise ValueError("Kiasi ni kidogo sana.")
-            if amount > 2000001:  # max amount e.g., 2,000,000 TZS
+            if amount > 5000001:  # max amount e.g., 5,000,000 TZS
                 raise ValueError("Kiasi ni kikubwa sana.")
         except (ValueError, TypeError) as e:
             error_message = f'Kiasi si sahihi: {str(e)}'

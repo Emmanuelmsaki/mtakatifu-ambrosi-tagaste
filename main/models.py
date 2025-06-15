@@ -386,7 +386,6 @@ class Podcast(SwahiliDateMixin,models.Model):
     
 class Give(models.Model):
     taarifa = models.TextField(verbose_name='UJUMBE')
-    kwa_simu = models.TextField(verbose_name='KWA SIMU')
     kwa_benki = models.TextField(verbose_name='KWA BENKI')
 
     def __str__(self):

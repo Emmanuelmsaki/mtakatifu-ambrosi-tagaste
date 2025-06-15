@@ -1,3 +1,9 @@
+.supoted-mno{
+  color:white;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
 .payment-font{
   font-size:1.2rem;
 }
@@ -7,6 +13,12 @@
 .changia-logo{
   height:70px;
   width:100px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+.changia-logo1{
+  height:100px;
+  width:300px;
   border-radius: 0.5rem;
   object-fit: cover;
 }
