@@ -74,7 +74,7 @@ def email(request):
         email = request.POST.get('email')
         message = request.POST.get('message')
 
-        subject = f"New message from {name}"
+        subject = f"Ujumbe mpya kutoka kwa {name}"
         full_message = f"Jina: {name}\nBarue Pepe: {email}\n\nUjumbe:\n{message}"
 
         try:
@@ -587,7 +587,8 @@ def process_payment(request):
                 return render(request, 'payment_success.html', {
                     'transaction_id': transaction_id,
                     'message': message,
-                    'external_id': external_id
+                    'external_id': external_id,
+                    'transaction': PaymentTransaction.objects.get(external_id=external_id)
                 })
             else:
                 error_message = response_data.get('message', 'Malipo yameshindwa kuanzishwa.')
@@ -626,6 +627,7 @@ def azampay_callback(request):
                 txn = PaymentTransaction.objects.get(external_id=utility_ref)
                 txn.status = transaction_status
                 txn.transaction_id = reference_id
+                txn.operator = operator
                 txn.save()
                 print(f"Transaction {reference_id} updated in DB.")
             except PaymentTransaction.DoesNotExist:

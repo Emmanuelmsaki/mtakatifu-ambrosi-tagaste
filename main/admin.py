@@ -44,8 +44,8 @@ from .models import PaymentTransaction
 
 @admin.register(PaymentTransaction)
 class PaymentTransactionAdmin(admin.ModelAdmin):
-    list_display = ('external_id', 'phone', 'amount', 'status', 'provider', 'transaction_id', 'created_at')
-    list_filter = ('status', 'provider', 'created_at')
+    list_display = ('external_id', 'phone', 'amount', 'status', 'provider','operator', 'transaction_id', 'created_at')
+    list_filter = ('status', 'provider','operator', 'created_at')
     search_fields = ('phone', 'external_id', 'transaction_id')
 
 class CustomUserAdmin(UserAdmin):

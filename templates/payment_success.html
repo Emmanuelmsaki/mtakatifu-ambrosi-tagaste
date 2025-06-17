@@ -11,6 +11,7 @@
                      <p class="lead">{{ message }}</p>
                       <p><strong>AzamPay Transaction ID:</strong><span class="payment-font1 lead text-break"> {{ transaction_id }}</span></p>
                       <p><strong>Your Reference ID:</strong><span class="payment-font1 lead"> {{ external_id }}</span></p>
+                      <p><strong>Mtandao :</strong><span class="payment-font1 lead"> {{ transaction.operator|default:"N/A" }}</span></p>
                       <p class="payment-font lead">Tafadhali angalia simu yako ili kukamilisha muamala.</p>
                       <a href="{% url 'changia' %}" class="btn btn-email mt-3">Fanya malipo mengine.</a>   
             </div>
