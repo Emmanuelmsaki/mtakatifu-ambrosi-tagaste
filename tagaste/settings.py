@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-bx&kj*zx+65tl0g4kl9o8$(t-&0_pki#r@kqi8lj+5ac)dmz@m
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '192.168.1.150',
+    '192.168.1.149',
     'localhost',
     '127.0.0.1'
 ]
@@ -275,3 +275,26 @@ AZAMPAY_SANDBOX_CHECKOUT_URL = 'https://sandbox.azampay.co.tz'
 # Example: If your domain is example.com, this might be 'https://example.com/azampay-callback/'
 # IMPORTANT: For Sandbox, register this URL in your AzamPay Sandbox portal.
 AZAMPAY_CALLBACK_URL = 'https://add5-197-186-17-186.ngrok-free.app/azampesa/callback/' # Adjust for production
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',  # For development only
+        'LOCATION': 'unique-azam-token-cache',
+    }
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {  # Logs to the terminal
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',  # Change to DEBUG for more logs
+        },
+    },
+}
